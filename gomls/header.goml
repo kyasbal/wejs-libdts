@@ -1,0 +1,16 @@
+<goml bgColor="#F9EFD5">
+  <import-material typeName="transition-default" src="./transitions/default.sort"/>
+  <import-material typeName="top-shader" src="./resources/shaders/top.sort"/>
+  <import-material typeName="fusion-shader" src="./resources/shaders/fusion.sort"/>
+  <material type="transition-default" class="transition" id="default"/>
+  <renderer>
+    <render-slide>
+      <render-slide.components>
+        <SlideController clickRegion="#paragraph-root"/>
+      </render-slide.components>
+    </render-slide>
+  </renderer>
+  {{#each slides}}
+  {{this}}
+  {{/each}}
+</goml>

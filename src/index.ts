@@ -1,8 +1,8 @@
 
 var __VERSION__ = "1.0.0";
-var __NAME__ = "grimoirejs-ts-boilerplate";
+var __NAME__ = "grimoirejs-sc-slide";
 
-import __MAIN__ from "./main"
+import __MAIN__ from "./main";
 
 var __EXPOSE__ = {};
 
@@ -14,6 +14,6 @@ Object.assign(__EXPOSE__,{
 });
 Object.assign(__BASE__|| {},__EXPOSE__);
 
-window["GrimoireJS"].lib.ts_boilerplate = __EXPOSE__;
+window["GrimoireJS"].lib.sc_slide = __EXPOSE__;
 
 export default __BASE__;

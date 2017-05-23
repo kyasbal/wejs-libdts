@@ -1,0 +1,27 @@
+@Pass{
+  FS_PREC(mediump,float)
+  varying vec2 vUV;
+  #ifdef VS
+  attribute vec3 position;
+  @TEXCOORD
+  attribute vec2 uv;
+  void main(){
+    gl_Position = vec4(position,1);
+    vUV = uv;
+    vUV.y = 1. - vUV.y;
+  }
+  #endif
+
+  #ifdef FS
+
+  uniform float progress;
+
+  uniform sampler2D current;
+
+  uniform sampler2D last;
+
+  void main(){
+    gl_FragColor = mix(texture2D(last,vUV),texture2D(current,vUV),progress);
+  }
+  #endif
+}

@@ -1,0 +1,6 @@
+<scene-slide>
+  <camera/>
+  <mesh texture="./resources/logo.png" scale="3"/>
+  <mesh position="0,1,0.1" scale="5" material="new(top-shader)"/>
+  <p class="title-text" text="Web開発のためのWebGLフレームワーク"/>
+</scene-slide>
