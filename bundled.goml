@@ -21,15 +21,21 @@
   <p class="title-text" text="Web開発のためのWebGLフレームワーク"/>
 </scene-slide>
 
-  <scene-slide>
+  <scene-slide bgColor="black">
   <camera/>
+  <div class="fullscreen-container">
+    <video src="./resources/web.mp4" class="fullscreen-video"/>
+  </div>
   <div class="vertical-center">
-    <p text="情報としてのWeb" class="center-text"/>
+    <p text="情報としてのWeb" class="center-text-black"/>
   </div>
 </scene-slide>
 
-  <scene-slide>
+  <scene-slide bgColor="black">
   <camera/>
+  <div class="fullscreen-container">
+    <video src="./resources/appearin.mp4" class="fullscreen-video"/>
+  </div>
   <div class="vertical-center">
     <p text="機能としてのWeb" class="center-text"/>
   </div>
@@ -70,22 +76,28 @@
 
   <scene-slide>
   <camera/>
-  <mesh material="new(unlit)" geometry="sphere" scale="10,10,-10" color="red" texture="./resources/logo.png">
+  <mesh material="new(unlit)" geometry="sphere" scale="10,10,-10" texture="./resources/360.jpg">
     <mesh.components>
       <Rotate/>
     </mesh.components>
   </mesh>
 </scene-slide>
 
-  <scene-slide>
+  <scene-slide bgColor="black">
   <camera/>
+  <div class="fullscreen-container">
+    <video src="./resources/matterport.mp4" class="fullscreen-video"/>
+  </div>
   <div class="vertical-center">
     <p text="建築" class="center-text"/>
   </div>
 </scene-slide>
 
-  <scene-slide>
+  <scene-slide bgColor="black">
   <camera/>
+  <div class="fullscreen-container">
+    <video src="./resources/sketchfab.mp4" class="fullscreen-video"/>
+  </div>
   <div class="vertical-center">
     <p text="ソーシャルメディア" class="center-text"/>
   </div>
@@ -106,7 +118,7 @@
     </div>
     <div class="fusion-root-child">
       <div>
-        <p text="WebGLの世界" class="fusion-subtitle"></p>
+        <p text="CGの世界" class="fusion-subtitle"></p>
       </div>
       <img src="./resources/webgl.png"/>
     </div>
@@ -143,6 +155,25 @@
       </div>
     </div>
   </div>
+</scene-slide>
+
+  <scene-slide bgColor="black">
+  <camera/>
+  <light/>
+  <object>
+    <object.components>
+      <Rotate speed="-0.2"/>
+    </object.components>
+    <light color="blue" type="point" position="2,0,0"/>
+    <light color="green" type="point" position="-2,0,0"/>
+    <light color="red" type="point" position="0,0,2"/>
+  </object>
+  <model src="./resources/scifi-model/SciFiHelmet.gltf" scale="2">
+    <model.components>
+      <Rotate speed="0.3"/>
+    </model.components>
+  </model>
+  <mesh rotation="x(-90)" position="0,-2.5,0" scale="20"/>
 </scene-slide>
 
   <scene-slide>

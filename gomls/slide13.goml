@@ -1,0 +1,4 @@
+<scene-slide>
+  <camera/>
+  <mesh material="new(future-shader)"/>
+</scene-slide>

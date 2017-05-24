@@ -13,7 +13,7 @@
     </div>
     <div class="fusion-root-child">
       <div>
-        <p text="WebGLの世界" class="fusion-subtitle"></p>
+        <p text="CGの世界" class="fusion-subtitle"></p>
       </div>
       <img src="./resources/webgl.png"/>
     </div>

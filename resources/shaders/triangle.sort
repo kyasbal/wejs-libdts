@@ -17,6 +17,8 @@
 uniform float progress;
 @{type:"color"}
 uniform vec4 bc;
+
+uniform float _time;
 float line( vec2 a, vec2 b, vec2 p )
 {
 	vec2 aTob = b - a;
@@ -27,7 +29,9 @@ float line( vec2 a, vec2 b, vec2 p )
 	t = clamp( t, 0.0, 1.0);
 
 	float d = length( p - (a + aTob * t) );
-	d =(1.0 + abs(sin(p.x))/3.0) / d;
+  float cosT = distance(a,b)/distance(p,a);
+  float sinT = sqrt(1. - cosT*cosT);
+	d =(1.0 + abs(sin(sinT*distance(p,a) + _time/1000.))/4.0) / d;
 
 	return clamp( d, 0.0, 1.0 );
 }
@@ -44,7 +48,7 @@ void main( void ) {
 	finalColor += vec3( 8.0 * t, 2.0 * t, 4.0 * t);
 	t = line( vec2(0.0, v), vec2(v, -v), signedUV * scale );
 	finalColor += vec3( 2.0 * t, 8.0 * t, 4.0 * t);
-	t = line( vec2(-v, -v), vec2(v, -v), signedUV * scale );
+	t = line( vec2(v, -v), vec2(-v, -v), signedUV * scale );
 	finalColor += vec3( 2.0 * t, 4.0 * t, 8.0 * t);
 
 

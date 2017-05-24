@@ -1,6 +1,9 @@
-<scene-slide>
+<scene-slide bgColor="black">
   <camera/>
+  <div class="fullscreen-container">
+    <video src="./resources/web.mp4" class="fullscreen-video"/>
+  </div>
   <div class="vertical-center">
-    <p text="情報としてのWeb" class="center-text"/>
+    <p text="情報としてのWeb" class="center-text-black"/>
   </div>
 </scene-slide>

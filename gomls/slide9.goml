@@ -1,5 +1,8 @@
-<scene-slide>
+<scene-slide bgColor="black">
   <camera/>
+  <div class="fullscreen-container">
+    <video src="./resources/sketchfab.mp4" class="fullscreen-video"/>
+  </div>
   <div class="vertical-center">
     <p text="ソーシャルメディア" class="center-text"/>
   </div>

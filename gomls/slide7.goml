@@ -1,6 +1,6 @@
 <scene-slide>
   <camera/>
-  <mesh material="new(unlit)" geometry="sphere" scale="10,10,-10" color="red" texture="./resources/logo.png">
+  <mesh material="new(unlit)" geometry="sphere" scale="10,10,-10" texture="./resources/360.jpg">
     <mesh.components>
       <Rotate/>
     </mesh.components>

@@ -10,6 +10,7 @@ import ParagraphComponent from "./Components/ParagraphComponent";
 import ContainerComponent from "./Components/ContainerComponent";
 import ImageComponent from "./Components/ImageComponent";
 import ProgressSeeker from "./Components/ProgressSeeker";
+import VideoComponent from "./Components/VideoComponent";
 import Rotate from "./Components/Rotate";
 
 export default ()=>{
@@ -18,9 +19,11 @@ export default ()=>{
     gr.registerComponent("Container",ContainerComponent);
     gr.registerComponent("Image",ImageComponent);
     gr.registerComponent("ProgressSeeker",ProgressSeeker);
+    gr.registerComponent("Video",VideoComponent);
     gr.registerComponent("Rotate",Rotate);
     gr.registerNode("p",["Paragraph"]);
     gr.registerNode("div",["Container"]);
     gr.registerNode("img",["Image"]);
+    gr.registerNode("video",["Video"]);
   });
 };
