@@ -4,6 +4,8 @@
   <import-material typeName="fusion-shader" src="./resources/shaders/fusion.sort"/>
   <import-material typeName="webglis-shader" src="./resources/shaders/webglis.sort"/>
   <import-material typeName="space-shader" src="./resources/shaders/space.sort"/>
+  <import-material typeName="future-shader" src="./resources/shaders/future.sort"/>
+  <import-material typeName="triangle-shader" src="./resources/shaders/triangle.sort"/>
   <material type="transition-default" class="transition" id="default"/>
   <renderer>
     <render-slide>
@@ -19,31 +21,17 @@
   <p class="title-text" text="Web開発のためのWebGLフレームワーク"/>
 </scene-slide>
 
-  <scene-slide build="3">
+  <scene-slide>
   <camera/>
-  <mesh material="new(fusion-shader)" progress="0.5">
-    <mesh.components>
-      <ProgressSeeker inBuild="2"/>
-    </mesh.components>
-  </mesh>
-  <div class="fusion-root">
-    <div class="logo-root">
-      <div class="logo-inner">
-        <img class="fusion-logo" src="./resources/logo.png" inBuild="2"/>
-      </div>
-    </div>
-    <div class="fusion-root-child">
-      <div>
-        <p text="WebGLの世界" class="fusion-subtitle"></p>
-      </div>
-      <img src="./resources/webgl.png"/>
-    </div>
-    <div class="fusion-root-child align-right">
-      <div>
-        <p text="Webの世界" class="fusion-subtitle"></p>
-      </div>
-      <img src="./resources/html5.png"/>
-    </div>
+  <div class="vertical-center">
+    <p text="情報としてのWeb" class="center-text"/>
+  </div>
+</scene-slide>
+
+  <scene-slide>
+  <camera/>
+  <div class="vertical-center">
+    <p text="機能としてのWeb" class="center-text"/>
   </div>
 </scene-slide>
 
@@ -87,6 +75,79 @@
       <Rotate/>
     </mesh.components>
   </mesh>
+</scene-slide>
+
+  <scene-slide>
+  <camera/>
+  <div class="vertical-center">
+    <p text="建築" class="center-text"/>
+  </div>
+</scene-slide>
+
+  <scene-slide>
+  <camera/>
+  <div class="vertical-center">
+    <p text="ソーシャルメディア" class="center-text"/>
+  </div>
+</scene-slide>
+
+  <scene-slide build="3">
+  <camera/>
+  <mesh material="new(fusion-shader)" progress="0.5">
+    <mesh.components>
+      <ProgressSeeker inBuild="2"/>
+    </mesh.components>
+  </mesh>
+  <div class="fusion-root">
+    <div class="logo-root">
+      <div class="logo-inner">
+        <img class="fusion-logo" src="./resources/logo.png" inBuild="2"/>
+      </div>
+    </div>
+    <div class="fusion-root-child">
+      <div>
+        <p text="WebGLの世界" class="fusion-subtitle"></p>
+      </div>
+      <img src="./resources/webgl.png"/>
+    </div>
+    <div class="fusion-root-child align-right">
+      <div>
+        <p text="Webの世界" class="fusion-subtitle"></p>
+      </div>
+      <img src="./resources/webtech.png"/>
+    </div>
+  </div>
+</scene-slide>
+
+  <scene-slide build="4">
+  <camera/>
+  <mesh material="new(triangle-shader)" bc="black" progress="1">
+  </mesh>
+  <div class="vertical-center">
+    <img src="./resources/logo.png" class="describe-logo"/>
+  </div>
+  <div class="describe-container">
+    <div class="describe-inner-container bottom-align">
+      <div class="margin-above">
+        <img src="./resources/jquery.png" inBuild="2"/>
+      </div>
+    </div>
+    <div class="describe-inner-container">
+      <div class="margin-below">
+        <img src="./resources/html5.png" inBuild="1"/>
+      </div>
+    </div>
+    <div class="describe-inner-container bottom-align">
+      <div class="margin-above">
+        <img src="./resources/unity.png" inBuild="3"/>
+      </div>
+    </div>
+  </div>
+</scene-slide>
+
+  <scene-slide>
+  <camera/>
+  <mesh material="new(future-shader)"/>
 </scene-slide>
 
 </goml>

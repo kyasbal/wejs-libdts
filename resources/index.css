@@ -42,9 +42,34 @@ div#paragraph-root {
   text-align: center;
 }
 .center-text {
-  font-size: 10em;
+  font-size: 7em;
   color: #fff;
   text-shadow: 1px 1px 2px #000;
+}
+.describe-logo {
+  width: 512px;
+  margin: 0 auto;
+}
+.describe-container {
+  display: flex;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  justify-content: space-between;
+}
+.describe-container .describe-inner-container {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  text-align: center;
+}
+.describe-container .describe-inner-container.bottom-align {
+  flex-direction: column-reverse;
+}
+.describe-container .describe-inner-container img {
+  width: 40%;
 }
 .fusion-root {
   display: flex;

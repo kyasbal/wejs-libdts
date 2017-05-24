@@ -1,4 +1,6 @@
 <scene-slide>
   <camera/>
-  <mesh material="new(webglis-shader)"/>
+  <div class="vertical-center">
+    <p text="機能としてのWeb" class="center-text"/>
+  </div>
 </scene-slide>

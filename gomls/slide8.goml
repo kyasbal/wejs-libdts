@@ -1,6 +1,6 @@
 <scene-slide>
   <camera/>
   <div class="vertical-center">
-    <p text="情報としてのWeb" class="center-text"/>
+    <p text="建築" class="center-text"/>
   </div>
 </scene-slide>

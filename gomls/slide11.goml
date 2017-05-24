@@ -1,0 +1,25 @@
+<scene-slide build="4">
+  <camera/>
+  <mesh material="new(triangle-shader)" bc="black" progress="1">
+  </mesh>
+  <div class="vertical-center">
+    <img src="./resources/logo.png" class="describe-logo"/>
+  </div>
+  <div class="describe-container">
+    <div class="describe-inner-container bottom-align">
+      <div class="margin-above">
+        <img src="./resources/jquery.png" inBuild="2"/>
+      </div>
+    </div>
+    <div class="describe-inner-container">
+      <div class="margin-below">
+        <img src="./resources/html5.png" inBuild="1"/>
+      </div>
+    </div>
+    <div class="describe-inner-container bottom-align">
+      <div class="margin-above">
+        <img src="./resources/unity.png" inBuild="3"/>
+      </div>
+    </div>
+  </div>
+</scene-slide>

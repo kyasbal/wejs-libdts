@@ -1,0 +1,54 @@
+@Pass{
+  FS_PREC(mediump,float)
+  varying vec2 vUV;
+  #ifdef VS
+  attribute vec3 position;
+
+  attribute vec2 texCoord;
+  uniform mat4 _matPVM;
+  void main(){
+    gl_Position =  vec4(position,1);
+    vUV = texCoord;
+    vUV.y = 1. - vUV.y;
+  }
+  #endif
+  #ifdef FS
+
+uniform float progress;
+@{type:"color"}
+uniform vec4 bc;
+float line( vec2 a, vec2 b, vec2 p )
+{
+	vec2 aTob = b - a;
+	vec2 aTop = p - a;
+
+	float t = dot( aTop, aTob ) / dot( aTob, aTob);
+
+	t = clamp( t, 0.0, 1.0);
+
+	float d = length( p - (a + aTob * t) );
+	d =(1.0 + abs(sin(p.x))/3.0) / d;
+
+	return clamp( d, 0.0, 1.0 );
+}
+
+
+void main( void ) {
+	vec2 uv = vUV;
+
+	vec2 signedUV = uv * 2.0 - 1.0;
+	float scale = 100.0;
+	const float v = 70.0;
+	vec3 finalColor = vec3( 0.0 );
+	float t = line( vec2(-v, -v), vec2(0.0, v), signedUV * scale );
+	finalColor += vec3( 8.0 * t, 2.0 * t, 4.0 * t);
+	t = line( vec2(0.0, v), vec2(v, -v), signedUV * scale );
+	finalColor += vec3( 2.0 * t, 8.0 * t, 4.0 * t);
+	t = line( vec2(-v, -v), vec2(v, -v), signedUV * scale );
+	finalColor += vec3( 2.0 * t, 4.0 * t, 8.0 * t);
+
+
+	gl_FragColor = mix(bc,vec4( finalColor, 1.0 ),progress);
+}
+  #endif
+}

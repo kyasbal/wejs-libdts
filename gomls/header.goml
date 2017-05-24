@@ -4,6 +4,8 @@
   <import-material typeName="fusion-shader" src="./resources/shaders/fusion.sort"/>
   <import-material typeName="webglis-shader" src="./resources/shaders/webglis.sort"/>
   <import-material typeName="space-shader" src="./resources/shaders/space.sort"/>
+  <import-material typeName="future-shader" src="./resources/shaders/future.sort"/>
+  <import-material typeName="triangle-shader" src="./resources/shaders/triangle.sort"/>
   <material type="transition-default" class="transition" id="default"/>
   <renderer>
     <render-slide>
