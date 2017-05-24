@@ -2,6 +2,8 @@
   <import-material typeName="transition-default" src="./transitions/default.sort"/>
   <import-material typeName="top-shader" src="./resources/shaders/top.sort"/>
   <import-material typeName="fusion-shader" src="./resources/shaders/fusion.sort"/>
+  <import-material typeName="webglis-shader" src="./resources/shaders/webglis.sort"/>
+  <import-material typeName="space-shader" src="./resources/shaders/space.sort"/>
   <material type="transition-default" class="transition" id="default"/>
   <renderer>
     <render-slide>
@@ -12,7 +14,7 @@
   </renderer>
   <scene-slide>
   <camera/>
-  <mesh texture="./resources/logo.png" scale="3"/>
+  <mesh material="new(unlit)" texture="./resources/logo.png" scale="3"/>
   <mesh position="0,1,0.1" scale="5" material="new(top-shader)"/>
   <p class="title-text" text="Web開発のためのWebGLフレームワーク"/>
 </scene-slide>
@@ -47,7 +49,44 @@
 
   <scene-slide>
   <camera/>
-  <mesh color="yellow"/>
+  <mesh material="new(webglis-shader)"/>
+</scene-slide>
+
+  <scene-slide bgColor="black">
+  <camera/>
+  <light/>
+  <object>
+    <object.components>
+      <Rotate speed="-0.2"/>
+    </object.components>
+    <light color="blue" type="point" position="2,0,0"/>
+    <light color="green" type="point" position="-2,0,0"/>
+    <light color="red" type="point" position="0,0,2"/>
+  </object>
+  <model src="./resources/scifi-model/SciFiHelmet.gltf" scale="2">
+    <model.components>
+      <Rotate speed="0.3"/>
+    </model.components>
+  </model>
+  <mesh rotation="x(-90)" position="0,-2.5,0" scale="20"/>
+</scene-slide>
+
+  <scene-slide build="2">
+  <camera/>
+  <mesh material="new(space-shader)">
+    <mesh.components>
+      <ProgressSeeker/>
+    </mesh.components>
+  </mesh>
+</scene-slide>
+
+  <scene-slide>
+  <camera/>
+  <mesh material="new(unlit)" geometry="sphere" scale="10,10,-10" color="red" texture="./resources/logo.png">
+    <mesh.components>
+      <Rotate/>
+    </mesh.components>
+  </mesh>
 </scene-slide>
 
 </goml>

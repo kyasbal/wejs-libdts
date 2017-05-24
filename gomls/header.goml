@@ -2,6 +2,8 @@
   <import-material typeName="transition-default" src="./transitions/default.sort"/>
   <import-material typeName="top-shader" src="./resources/shaders/top.sort"/>
   <import-material typeName="fusion-shader" src="./resources/shaders/fusion.sort"/>
+  <import-material typeName="webglis-shader" src="./resources/shaders/webglis.sort"/>
+  <import-material typeName="space-shader" src="./resources/shaders/space.sort"/>
   <material type="transition-default" class="transition" id="default"/>
   <renderer>
     <render-slide>

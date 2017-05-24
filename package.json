@@ -23,7 +23,7 @@
         "grimoirejs-forward-shading": "^1.6.2",
         "grimoirejs-fundamental": "^0.19.1",
         "grimoirejs-gltf": "beta",
-        "grimoirejs-slide-system": "0.0.9"
+        "grimoirejs-slide-system": "0.0.14"
     },
     "devDependencies": {
         "babel-cli": "^6.18.0",

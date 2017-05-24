@@ -30,6 +30,22 @@ div#paragraph-root {
 .align-right {
   text-align: right;
 }
+.vertical-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  text-align: center;
+}
+.center-text {
+  font-size: 10em;
+  color: #fff;
+  text-shadow: 1px 1px 2px #000;
+}
 .fusion-root {
   display: flex;
   width: 100%;

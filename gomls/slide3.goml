@@ -1,4 +1,4 @@
 <scene-slide>
   <camera/>
-  <mesh color="yellow"/>
+  <mesh material="new(webglis-shader)"/>
 </scene-slide>

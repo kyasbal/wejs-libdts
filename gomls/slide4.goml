@@ -1,0 +1,18 @@
+<scene-slide bgColor="black">
+  <camera/>
+  <light/>
+  <object>
+    <object.components>
+      <Rotate speed="-0.2"/>
+    </object.components>
+    <light color="blue" type="point" position="2,0,0"/>
+    <light color="green" type="point" position="-2,0,0"/>
+    <light color="red" type="point" position="0,0,2"/>
+  </object>
+  <model src="./resources/scifi-model/SciFiHelmet.gltf" scale="2">
+    <model.components>
+      <Rotate speed="0.3"/>
+    </model.components>
+  </model>
+  <mesh rotation="x(-90)" position="0,-2.5,0" scale="20"/>
+</scene-slide>
