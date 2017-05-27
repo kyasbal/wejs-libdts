@@ -47,7 +47,11 @@
 </scene-slide>
 
   <scene-slide bgColor="black">
-  <camera/>
+  <camera>
+    <camera.components>
+      <MouseCameraControl/>
+    </camera.components>
+  </camera>
   <light/>
   <object>
     <object.components>
@@ -120,13 +124,23 @@
       <div>
         <p text="CGの世界" class="fusion-subtitle"></p>
       </div>
-      <img src="./resources/webgl.png"/>
+      <div>
+        <img src="./resources/webgl.png"/>
+      </div>
+      <div>
+        <img src="./resources/loop.png" inBuild="1"/>
+      </div>
     </div>
     <div class="fusion-root-child align-right">
       <div>
         <p text="Webの世界" class="fusion-subtitle"></p>
       </div>
-      <img src="./resources/webtech.png"/>
+      <div>
+        <img src="./resources/webtech.png"/>
+      </div>
+      <div>
+        <img src="./resources/event.png" inBuild="1"/>
+      </div>
     </div>
   </div>
 </scene-slide>
@@ -157,8 +171,12 @@
   </div>
 </scene-slide>
 
-  <scene-slide bgColor="black">
-  <camera/>
+  <scene-slide bgColor="black" build="3">
+  <camera>
+    <camera.components>
+      <MouseCameraControl/>
+    </camera.components>
+  </camera>
   <light/>
   <object>
     <object.components>
@@ -174,6 +192,9 @@
     </model.components>
   </model>
   <mesh rotation="x(-90)" position="0,-2.5,0" scale="20"/>
+  <div id="source-container" inBuild="1" outBuild="2">
+
+  </div>
 </scene-slide>
 
   <scene-slide>

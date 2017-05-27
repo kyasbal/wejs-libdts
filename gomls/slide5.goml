@@ -1,5 +1,9 @@
 <scene-slide bgColor="black">
-  <camera/>
+  <camera>
+    <camera.components>
+      <MouseCameraControl/>
+    </camera.components>
+  </camera>
   <light/>
   <object>
     <object.components>

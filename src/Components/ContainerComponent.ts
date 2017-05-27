@@ -6,6 +6,10 @@ export default class ContainerComponent extends Component {
     inBuild:{
       converter:"Number",
       default:0
+    },
+    outBuild:{
+      converter:"Number",
+      default:Number.MAX_SAFE_INTEGER
     }
   };
 
@@ -40,6 +44,9 @@ export default class ContainerComponent extends Component {
   public $buildStart(buildIndex:number):void{
     if(buildIndex === this.getAttribute("inBuild")){
       this.targetElement.style.visibility="visible";
+    }
+    if(buildIndex === this.getAttribute("outBuild")){
+      this.targetElement.style.visibility="collapse";
     }
   }
 

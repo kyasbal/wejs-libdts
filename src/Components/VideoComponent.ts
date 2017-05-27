@@ -10,6 +10,10 @@ export default class VideoComponent extends ContainerComponent{
     src:{
       converter:"String",
       default:0
+    },
+    outBuild:{
+      converter:"Number",
+      default:Number.MAX_SAFE_INTEGER
     }
   };
   private video:HTMLVideoElement;

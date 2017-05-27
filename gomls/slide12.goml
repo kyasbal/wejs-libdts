@@ -1,5 +1,9 @@
-<scene-slide bgColor="black">
-  <camera/>
+<scene-slide bgColor="black" build="3">
+  <camera>
+    <camera.components>
+      <MouseCameraControl/>
+    </camera.components>
+  </camera>
   <light/>
   <object>
     <object.components>
@@ -15,4 +19,7 @@
     </model.components>
   </model>
   <mesh rotation="x(-90)" position="0,-2.5,0" scale="20"/>
+  <div id="source-container" inBuild="1" outBuild="2">
+
+  </div>
 </scene-slide>

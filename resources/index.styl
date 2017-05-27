@@ -11,8 +11,31 @@ html,body,div
   padding 0px
   font-family 'mplus-1p-regular'
 
+p,img,video
+  user-select none
+
+#canvas-container
+  position absolute
+  left 0px
+  right 0px
+  top 0px
+  bottom 0px
+
+#source-container
+  font-size 3em
+  margin 0 auto
+  display flex
+  justify-content space-around
+  height 100%
+
+#model-source
+  display flex
+  justify-content space-around
+  flex-direction column
+  height 100%
 
 div#paragraph-root
+  pointer-events none
   position absolute
   z-index 10
   left 0px

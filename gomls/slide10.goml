@@ -15,13 +15,23 @@
       <div>
         <p text="CGの世界" class="fusion-subtitle"></p>
       </div>
-      <img src="./resources/webgl.png"/>
+      <div>
+        <img src="./resources/webgl.png"/>
+      </div>
+      <div>
+        <img src="./resources/loop.png" inBuild="1"/>
+      </div>
     </div>
     <div class="fusion-root-child align-right">
       <div>
         <p text="Webの世界" class="fusion-subtitle"></p>
       </div>
-      <img src="./resources/webtech.png"/>
+      <div>
+        <img src="./resources/webtech.png"/>
+      </div>
+      <div>
+        <img src="./resources/event.png" inBuild="1"/>
+      </div>
     </div>
   </div>
 </scene-slide>

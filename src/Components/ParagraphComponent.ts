@@ -10,6 +10,10 @@ export default class ParagraphComponent extends ContainerComponent {
     inBuild:{
       converter:"Number",
       default:0
+    },
+    outBuild:{
+      converter:"Number",
+      default:Number.MAX_SAFE_INTEGER
     }
   };
 

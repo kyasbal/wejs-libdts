@@ -5,6 +5,7 @@ import "grimoirejs-forward-shading/register";
 import "grimoirejs-gltf/register";
 import "grimoirejs-slide-system/register";
 import gr from "grimoirejs";
+import "jquery";
 
 import ParagraphComponent from "./Components/ParagraphComponent";
 import ContainerComponent from "./Components/ContainerComponent";
@@ -25,5 +26,8 @@ export default ()=>{
     gr.registerNode("div",["Container"]);
     gr.registerNode("img",["Image"]);
     gr.registerNode("video",["Video"]);
+  });
+  gr(()=>{
+    $("#source-container").append($("#model-source").css("visibility",""));
   });
 };
