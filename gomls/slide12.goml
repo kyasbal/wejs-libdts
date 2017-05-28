@@ -1,4 +1,4 @@
-<scene-slide bgColor="black" build="3">
+<scene-slide bgColor="black" build="3" buildTransitionTime="0.2">
   <camera>
     <camera.components>
       <MouseCameraControl/>

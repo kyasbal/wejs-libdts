@@ -42,7 +42,8 @@
 </scene-slide>
 
   <scene-slide>
-  <camera/>
+  <camera>
+  </camera>
   <mesh material="new(webglis-shader)"/>
 </scene-slide>
 
@@ -79,7 +80,11 @@
 </scene-slide>
 
   <scene-slide>
-  <camera/>
+  <camera>
+    <camera.components>
+      <MouseCameraControl/>
+    </camera.components>
+  </camera>
   <mesh material="new(unlit)" geometry="sphere" scale="10,10,-10" texture="./resources/360.jpg">
     <mesh.components>
       <Rotate/>
@@ -171,7 +176,7 @@
   </div>
 </scene-slide>
 
-  <scene-slide bgColor="black" build="3">
+  <scene-slide bgColor="black" build="3" buildTransitionTime="0.2">
   <camera>
     <camera.components>
       <MouseCameraControl/>

@@ -42,11 +42,19 @@ export default class ContainerComponent extends Component {
   }
 
   public $buildStart(buildIndex:number):void{
-    if(buildIndex === this.getAttribute("inBuild")){
+    if(this.getAttribute("inBuild") === buildIndex){
       this.targetElement.style.visibility="visible";
+      this.targetElement.style.opacity = "1";
     }
     if(buildIndex === this.getAttribute("outBuild")){
       this.targetElement.style.visibility="collapse";
+    }
+  }
+
+  public $buildProgress(args:{buildIndex:number,progress:number}):void {
+    if(this.getAttribute("inBuild") === args.buildIndex){
+      this.targetElement.style.visibility="visible";
+      this.targetElement.style.opacity = args.progress+"";
     }
   }
 
