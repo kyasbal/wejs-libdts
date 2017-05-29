@@ -30,4 +30,7 @@ export default ()=>{
   gr(()=>{
     $("#source-container").append($("#model-source").css("visibility",""));
   });
+  document.addEventListener("keydown",(e)=>{
+    e.preventDefault();
+  })
 };
