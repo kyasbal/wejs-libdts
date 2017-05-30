@@ -125,6 +125,9 @@ div#paragraph-root {
   display: block;
   transform: translate(-50%, -50%);
 }
+.future-container img.bigger {
+  width: 60%;
+}
 .fusion-root {
   display: flex;
   width: 100%;
