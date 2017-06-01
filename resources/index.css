@@ -1,8 +1,3 @@
-@font-face {
-  font-family: 'mplus-1p-regular';
-  src: url("http://mplus-webfonts.sourceforge.jp/mplus-1p-regular.eot");
-  src: url("http://mplus-webfonts.sourceforge.jp/mplus-1p-regular.eot?#iefix") format('embedded-opentype'), url("http://mplus-webfonts.sourceforge.jp/mplus-1p-regular.woff") format('woff'), url("http://mplus-webfonts.sourceforge.jp/mplus-1p-regular.ttf") format('truetype');
-}
 html,
 body,
 div {
