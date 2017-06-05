@@ -49,13 +49,13 @@ export default class EditorComponent extends ContainerComponent {
 
   private async _configure():Promise<void>{
     if(EditorComponent._configured)return;
-    monaco.languages.typescript.javascriptDefaults.addExtraLib(await this._readText("/node_modules/@types/jquery/index.d.ts"))
+    monaco.languages.typescript.javascriptDefaults.addExtraLib(await this._readText("/libs/@types/jquery/index.d.ts"))
     monaco.languages.typescript.javascriptDefaults.addExtraLib(await this._readText("grimoire.d.ts"));
     EditorComponent._configured = true;
   }
 
   private _createEditor(container:HTMLElement,buttonElem:HTMLElement):void{
-    window["require"].config({ paths: { 'vs': 'node_modules/monaco-editor/min/vs' } });
+    window["require"].config({ paths: { 'vs': 'libs/monaco-editor/min/vs' } });
     const that = this;
     this._readText(this.getAttribute("src")).then(text=>{
       window["require"](['vs/editor/editor.main'], function() {
