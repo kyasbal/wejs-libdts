@@ -10,6 +10,10 @@ export default class ContainerComponent extends Component {
     outBuild:{
       converter:"Number",
       default:Number.MAX_SAFE_INTEGER
+    },
+    defaultContainer:{
+      converter:"String",
+      default:"div#paragraph-root"
     }
   };
 
@@ -23,7 +27,7 @@ export default class ContainerComponent extends Component {
     if(parentContainer){
       this._parent = parentContainer.targetElement;
     }else{
-      this._parent = document.querySelector("div#paragraph-root") as HTMLElement;
+      this._parent = document.querySelector(this.getAttribute("defaultContainer")) as HTMLElement;
     }
     const className = this.node.getAttribute("class");
     if(className){

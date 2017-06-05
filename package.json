@@ -25,7 +25,8 @@
         "grimoirejs-fundamental": "^0.19.1",
         "grimoirejs-gltf": "beta",
         "grimoirejs-slide-system": "0.0.15",
-        "jquery": "^3.2.1"
+        "jquery": "^3.2.1",
+        "monaco-editor": "^0.8.3"
     },
     "devDependencies": {
         "babel-cli": "^6.18.0",

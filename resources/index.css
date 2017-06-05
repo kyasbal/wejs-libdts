@@ -1,14 +1,8 @@
 html,
-body,
-div {
+body {
   margin: 0px;
   padding: 0px;
-  font-family: 'mplus-1p-regular';
-}
-p,
-img,
-video {
-  user-select: none;
+  height: 100%;
 }
 #canvas-container {
   position: absolute;
@@ -17,18 +11,58 @@ video {
   top: 0px;
   bottom: 0px;
 }
-#source-container {
-  font-size: 3em;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-around;
-  height: 100%;
-}
 #model-source {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
   height: 100%;
+}
+#editor-root {
+  z-index: 10;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  pointer-events: none;
+}
+#editor-root .single-editor-container-outer {
+  position: absolute;
+  top: 5%;
+  bottom: 5%;
+  left: 10%;
+  right: 10%;
+  pointer-events: all;
+}
+#editor-root .single-editor-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  opacity: 0.3;
+}
+#editor-root .single-editor-container:hover {
+  opacity: 0.9;
+}
+#editor-root .actual-editor-container {
+  flex: 1;
+}
+#editor-root .button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+#editor-root .button-container .button-inner-container {
+  width: 120px;
+  text-align: center;
+  border: 4px #f00 solid;
+}
+#editor-root .button-container .button-inner-container:hover {
+  background-color: rgba(255,255,255,0.8);
+  cursor: pointer;
+}
+#editor-root .button-container .button-inner-container p {
+  color: #f00;
+  font-weight: 600;
 }
 div#paragraph-root {
   pointer-events: none;

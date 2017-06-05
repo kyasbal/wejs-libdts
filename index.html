@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <script src="./register/grimoire-sc-slide.js" charset="utf-8"></script>
+    <script src="./node_modules/monaco-editor/dev/vs/loader.js"></script>
 <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -10,35 +11,13 @@
     <link rel="stylesheet" href="./resources/index.css"/>
   </head>
   <body>
+    <div id="editor-root">
+
+    </div>
     <div id="paragraph-root">
     </div>
     <div id="canvas-container">
-      <script type="text/goml" src="./bundled.goml"></script>
-    </div>
-    <div style="visibility:collapse;opacity:0.7;" id="model-source">
-      <pre style='color:#d1d1d1;background:#000000;'><span style='color:#ff8906; '>&lt;</span><span style='color:#f6c1d0; '>scene-slide</span> bgColor<span style='color:#d2cd86; '>=</span><span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>black</span><span style='color:#02d045; '>"</span><span style='color:#ff8906; '>></span>
-        <span style='color:#ff8906; '>&lt;</span><span style='color:#f6c1d0; '>camera</span><span style='color:#ff8906; '>></span>
-          <span style='color:#ff8906; '>&lt;</span><span style='color:#f6c1d0; '>camera.components</span><span style='color:#ff8906; '>></span>
-            <span style='color:#ff8906; '>&lt;</span><span style='color:#f6c1d0; '>MouseCameraControl</span><span style='color:#ff8906; '>/></span>
-          <span style='color:#fb8400; '>&lt;/</span><span style='color:#f6c1d0; '>camera.components</span><span style='color:#fb8400; '>></span>
-        <span style='color:#fb8400; '>&lt;/</span><span style='color:#f6c1d0; '>camera</span><span style='color:#fb8400; '>></span>
-        <span style='color:#ff8906; '>&lt;</span><span style='color:#f6c1d0; '>light</span><span style='color:#ff8906; '>/></span>
-        <span style='color:#ff8906; '>&lt;</span><span style='color:#f6c1d0; '>object</span><span style='color:#ff8906; '>></span>
-          <span style='color:#ff8906; '>&lt;</span><span style='color:#f6c1d0; '>object.components</span><span style='color:#ff8906; '>></span>
-            <span style='color:#ff8906; '>&lt;</span><span style='color:#f6c1d0; '>Rotate</span> speed<span style='color:#d2cd86; '>=</span><span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>-0.2</span><span style='color:#02d045; '>"</span><span style='color:#ff8906; '>/></span>
-          <span style='color:#fb8400; '>&lt;/</span><span style='color:#f6c1d0; '>object.components</span><span style='color:#fb8400; '>></span>
-          <span style='color:#ff8906; '>&lt;</span><span style='color:#f6c1d0; '>light</span> color<span style='color:#d2cd86; '>=</span><span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>blue</span><span style='color:#02d045; '>"</span> type<span style='color:#d2cd86; '>=</span><span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>point</span><span style='color:#02d045; '>"</span> position<span style='color:#d2cd86; '>=</span><span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>2,0,0</span><span style='color:#02d045; '>"</span><span style='color:#ff8906; '>/></span>
-          <span style='color:#ff8906; '>&lt;</span><span style='color:#f6c1d0; '>light</span> color<span style='color:#d2cd86; '>=</span><span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>green</span><span style='color:#02d045; '>"</span> type<span style='color:#d2cd86; '>=</span><span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>point</span><span style='color:#02d045; '>"</span> position<span style='color:#d2cd86; '>=</span><span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>-2,0,0</span><span style='color:#02d045; '>"</span><span style='color:#ff8906; '>/></span>
-          <span style='color:#ff8906; '>&lt;</span><span style='color:#f6c1d0; '>light</span> color<span style='color:#d2cd86; '>=</span><span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>red</span><span style='color:#02d045; '>"</span> type<span style='color:#d2cd86; '>=</span><span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>point</span><span style='color:#02d045; '>"</span> position<span style='color:#d2cd86; '>=</span><span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>0,0,2</span><span style='color:#02d045; '>"</span><span style='color:#ff8906; '>/></span>
-        <span style='color:#fb8400; '>&lt;/</span><span style='color:#f6c1d0; '>object</span><span style='color:#fb8400; '>></span>
-        <span style='color:#ff8906; '>&lt;</span><span style='color:#f6c1d0; '>model</span> src<span style='color:#d2cd86; '>=</span><span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>./resources/scifi-model/SciFiHelmet.gltf</span><span style='color:#02d045; '>"</span> scale<span style='color:#d2cd86; '>=</span><span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>2</span><span style='color:#02d045; '>"</span><span style='color:#ff8906; '>></span>
-          <span style='color:#ff8906; '>&lt;</span><span style='color:#f6c1d0; '>model.components</span><span style='color:#ff8906; '>></span>
-            <span style='color:#ff8906; '>&lt;</span><span style='color:#f6c1d0; '>Rotate</span> speed<span style='color:#d2cd86; '>=</span><span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>0.3</span><span style='color:#02d045; '>"</span><span style='color:#ff8906; '>/></span>
-          <span style='color:#fb8400; '>&lt;/</span><span style='color:#f6c1d0; '>model.components</span><span style='color:#fb8400; '>></span>
-        <span style='color:#fb8400; '>&lt;/</span><span style='color:#f6c1d0; '>model</span><span style='color:#fb8400; '>></span>
-        <span style='color:#ff8906; '>&lt;</span><span style='color:#f6c1d0; '>mesh</span> rotation<span style='color:#d2cd86; '>=</span><span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>x(-90)</span><span style='color:#02d045; '>"</span> position<span style='color:#d2cd86; '>=</span><span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>0,-2.5,0</span><span style='color:#02d045; '>"</span> scale<span style='color:#d2cd86; '>=</span><span style='color:#02d045; '>"</span><span style='color:#00c4c4; '>20</span><span style='color:#02d045; '>"</span><span style='color:#ff8906; '>/></span>
-      <span style='color:#fb8400; '>&lt;/</span><span style='color:#f6c1d0; '>scene-slide</span><span style='color:#fb8400; '>></span>
-      </pre>
+      <script id="slide" type="text/goml" src="./bundled.goml"></script>
     </div>
   </body>
 </html>

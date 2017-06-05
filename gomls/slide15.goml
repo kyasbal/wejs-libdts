@@ -1,0 +1,10 @@
+<scene-slide build="3">
+  <camera/>
+  <mesh material="new(future-shader)"/>
+  <div class="vertical-center future-container">
+    <div>
+      <img src="./resources/future1.png" inBuild="1" outBuild="2"/>
+      <img class="bigger" src="./resources/future2.png" inBuild="2"/>
+    </div>
+  </div>
+</scene-slide>

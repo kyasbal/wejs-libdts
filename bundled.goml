@@ -7,13 +7,6 @@
   <import-material typeName="future-shader" src="./resources/shaders/future.sort"/>
   <import-material typeName="triangle-shader" src="./resources/shaders/triangle.sort"/>
   <material type="transition-default" class="transition" id="default"/>
-  <renderer>
-    <render-slide>
-      <render-slide.components>
-        <SlideController clickRegion="#paragraph-root"/>
-      </render-slide.components>
-    </render-slide>
-  </renderer>
   <scene-slide>
   <camera/>
   <mesh material="new(unlit)" texture="./resources/logo.png" scale="3"/>
@@ -176,6 +169,30 @@
   </div>
 </scene-slide>
 
+  <scene-slide build="5" bgColor="black">
+  <object class="editor-content-container">
+    <camera/>
+    <mesh class="the-mesh" geometry="cube" material="new(unlit)" color="red"/>
+    <light/>
+  </object>
+  <editor src="./resources/include.html" inBuild="1" outBuild="2" runButton="false" language="html"/>
+  <editor id="simple-goml-container" src="./resources/simple.goml" inBuild="2" outBuild="3" runButton="true" language="xml"/>
+  <editor src="./resources/empty.js" inBuild="3" outBuild="4" runButton="true"/>
+</scene-slide>
+
+  <scene-slide build="2" bgColor="black">
+  <object class="editor-content-container">
+    <camera>
+      <camera.components>
+        <MouseCameraControl/>
+      </camera.components>
+    </camera>
+    <mesh class="the-mesh" geometry="cube" material="new(unlit)" color="red"/>
+    <light/>
+  </object>
+  <editor src="./resources/mouse.goml" inBuild="0" outBuild="1" runButton="true" language="xml"/>
+</scene-slide>
+
   <scene-slide bgColor="black" build="3" buildTransitionTime="0.2">
   <camera>
     <camera.components>
@@ -197,9 +214,9 @@
     </model.components>
   </model>
   <mesh rotation="x(-90)" position="0,-2.5,0" scale="20"/>
-  <div id="source-container" inBuild="1" outBuild="2">
+  <editor id="source-container" src="./gomls/slide14.goml" inBuild="1" outBuild="2" language="xml" runButton="false">
 
-  </div>
+  </editor>
 </scene-slide>
 
   <scene-slide build="3">
@@ -213,5 +230,12 @@
   </div>
 </scene-slide>
 
+  <renderer>
+    <render-slide>
+      <render-slide.components>
+        <SlideController clickRegion="#paragraph-root"/>
+      </render-slide.components>
+    </render-slide>
+  </renderer>
 </goml>
 

@@ -7,6 +7,9 @@
   <import-material typeName="future-shader" src="./resources/shaders/future.sort"/>
   <import-material typeName="triangle-shader" src="./resources/shaders/triangle.sort"/>
   <material type="transition-default" class="transition" id="default"/>
+  {{#each slides}}
+  {{this}}
+  {{/each}}
   <renderer>
     <render-slide>
       <render-slide.components>
@@ -14,7 +17,4 @@
       </render-slide.components>
     </render-slide>
   </renderer>
-  {{#each slides}}
-  {{this}}
-  {{/each}}
 </goml>

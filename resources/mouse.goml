@@ -1,0 +1,11 @@
+<goml>
+  <scene>
+    <camera>
+      <camera.components>
+        <MouseCameraControl/>
+      </camera.components>
+    </camera>
+    <mesh class="the-mesh" geometry="cube" material="new(unlit)" color="red"/>
+    <light/>
+  </scene>
+</goml>
