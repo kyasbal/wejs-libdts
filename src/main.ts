@@ -5,7 +5,6 @@ import "grimoirejs-forward-shading/register";
 import "grimoirejs-gltf/register";
 import "grimoirejs-slide-system/register";
 import gr from "grimoirejs";
-import "jquery";
 
 import ParagraphComponent from "./Components/ParagraphComponent";
 import ContainerComponent from "./Components/ContainerComponent";
