@@ -3589,7 +3589,7 @@ var EditorComponent = function (_ContainerComponent) {
                             case 2:
                                 _context.t0 = monaco.languages.typescript.javascriptDefaults;
                                 _context.next = 5;
-                                return this._readText("/libs/@types/jquery/index.d.ts");
+                                return this._readText("/libs/jquery-dts/index.d.ts");
 
                             case 5:
                                 _context.t1 = _context.sent;
