@@ -1,4 +1,5 @@
 <goml bgColor="#F9EFD5">
+  <import-material typeName="intro-shader" src="./resources/shaders/intro.sort"/>
   <import-material typeName="transition-default" src="./transitions/default.sort"/>
   <import-material typeName="top-shader" src="./resources/shaders/top.sort"/>
   <import-material typeName="fusion-shader" src="./resources/shaders/fusion.sort"/>
@@ -7,14 +8,15 @@
   <import-material typeName="future-shader" src="./resources/shaders/future.sort"/>
   <import-material typeName="triangle-shader" src="./resources/shaders/triangle.sort"/>
   <material type="transition-default" class="transition" id="default"/>
-  <renderer>
-    <render-slide>
-      <render-slide.components>
-        <SlideController clickRegion="#paragraph-root"/>
-      </render-slide.components>
-    </render-slide>
-  </renderer>
   {{#each slides}}
+  <!--Slide {{@index}}-->
   {{this}}
   {{/each}}
+  <renderer>
+    <render-slide-hitarea>
+      <render-slide-hitarea.components>
+        <SlideController clickRegion="#paragraph-root"/>
+      </render-slide-hitarea.components>
+    </render-slide-hitarea>
+  </renderer>
 </goml>

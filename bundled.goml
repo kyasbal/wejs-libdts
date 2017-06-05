@@ -1,4 +1,5 @@
 <goml bgColor="#F9EFD5">
+  <import-material typeName="intro-shader" src="./resources/shaders/intro.sort"/>
   <import-material typeName="transition-default" src="./transitions/default.sort"/>
   <import-material typeName="top-shader" src="./resources/shaders/top.sort"/>
   <import-material typeName="fusion-shader" src="./resources/shaders/fusion.sort"/>
@@ -7,13 +8,30 @@
   <import-material typeName="future-shader" src="./resources/shaders/future.sort"/>
   <import-material typeName="triangle-shader" src="./resources/shaders/triangle.sort"/>
   <material type="transition-default" class="transition" id="default"/>
-  <renderer>
-    <render-slide>
-      <render-slide.components>
-        <SlideController clickRegion="#paragraph-root"/>
-      </render-slide.components>
-    </render-slide>
-  </renderer>
+  <!--Slide 0-->
+  <scene-slide>
+  <camera/>
+  <mesh material="new(intro-shader)"/>
+  <div id="intro-container">
+    <div id="intro-container-left">
+      <div class="intro-inner">
+      <img src="./resources/icon.png"/>
+      <p text="@kyasbal-1994"></p>
+      <p text="未踏2016スーパークリエイタ"/>
+      <p text="1994年生まれ 22歳"/>
+    </div>
+    </div>
+    <div id="intro-container-right">
+      <div class="intro-inner">
+      <p text="グラフィックス系のエンジニア"/>
+      <p text="他にも開発環境系やCI周り、"/>
+      <p text="TypescriptとGLSLばっか書いてる人"/>
+    </div>
+    </div>
+  </div>
+</scene-slide>
+
+  <!--Slide 1-->
   <scene-slide>
   <camera/>
   <mesh material="new(unlit)" texture="./resources/logo.png" scale="3"/>
@@ -21,6 +39,7 @@
   <p class="title-text" text="Web開発のためのWebGLフレームワーク"/>
 </scene-slide>
 
+  <!--Slide 2-->
   <scene-slide bgColor="black">
   <camera/>
   <div class="fullscreen-container">
@@ -31,6 +50,7 @@
   </div>
 </scene-slide>
 
+  <!--Slide 3-->
   <scene-slide bgColor="black">
   <camera/>
   <div class="fullscreen-container">
@@ -41,12 +61,14 @@
   </div>
 </scene-slide>
 
+  <!--Slide 4-->
   <scene-slide>
   <camera>
   </camera>
   <mesh material="new(webglis-shader)"/>
 </scene-slide>
 
+  <!--Slide 5-->
   <scene-slide bgColor="black">
   <camera>
     <camera.components>
@@ -70,6 +92,7 @@
   <mesh rotation="x(-90)" position="0,-2.5,0" scale="20"/>
 </scene-slide>
 
+  <!--Slide 6-->
   <scene-slide build="2">
   <camera/>
   <mesh material="new(space-shader)">
@@ -79,6 +102,7 @@
   </mesh>
 </scene-slide>
 
+  <!--Slide 7-->
   <scene-slide>
   <camera>
     <camera.components>
@@ -92,6 +116,7 @@
   </mesh>
 </scene-slide>
 
+  <!--Slide 8-->
   <scene-slide bgColor="black">
   <camera/>
   <div class="fullscreen-container">
@@ -102,6 +127,7 @@
   </div>
 </scene-slide>
 
+  <!--Slide 9-->
   <scene-slide bgColor="black">
   <camera/>
   <div class="fullscreen-container">
@@ -112,6 +138,7 @@
   </div>
 </scene-slide>
 
+  <!--Slide 10-->
   <scene-slide build="3">
   <camera/>
   <mesh material="new(fusion-shader)" progress="0.5">
@@ -150,6 +177,7 @@
   </div>
 </scene-slide>
 
+  <!--Slide 11-->
   <scene-slide build="4">
   <camera/>
   <mesh material="new(triangle-shader)" bc="black" progress="1">
@@ -176,6 +204,33 @@
   </div>
 </scene-slide>
 
+  <!--Slide 12-->
+  <scene-slide build="5" bgColor="black">
+  <object class="editor-content-container">
+    <camera/>
+    <mesh class="mesh1" geometry="cube" material="new(unlit)" color="red"/>
+    <light/>
+  </object>
+  <editor src="./resources/include.html" inBuild="1" outBuild="2" runButton="false" language="html"/>
+  <editor id="simple-goml-container" src="./resources/simple.goml" inBuild="2" outBuild="3" runButton="true" language="xml"/>
+  <editor src="./resources/empty.js" inBuild="3" outBuild="4" runButton="true"/>
+</scene-slide>
+
+  <!--Slide 13-->
+  <scene-slide build="2" bgColor="black">
+  <object class="editor-content-container">
+    <camera>
+      <camera.components>
+        <MouseCameraControl/>
+      </camera.components>
+    </camera>
+    <mesh geometry="cube" material="new(unlit)" color="red"/>
+    <light/>
+  </object>
+  <editor src="./resources/mouse.goml" inBuild="0" outBuild="1" runButton="true" language="xml"/>
+</scene-slide>
+
+  <!--Slide 14-->
   <scene-slide bgColor="black" build="3" buildTransitionTime="0.2">
   <camera>
     <camera.components>
@@ -197,11 +252,12 @@
     </model.components>
   </model>
   <mesh rotation="x(-90)" position="0,-2.5,0" scale="20"/>
-  <div id="source-container" inBuild="1" outBuild="2">
+  <editor id="source-container" src="./gomls/slide14.goml" inBuild="1" outBuild="2" language="xml" runButton="false">
 
-  </div>
+  </editor>
 </scene-slide>
 
+  <!--Slide 15-->
   <scene-slide build="3">
   <camera/>
   <mesh material="new(future-shader)"/>
@@ -213,5 +269,12 @@
   </div>
 </scene-slide>
 
+  <renderer>
+    <render-slide-hitarea>
+      <render-slide-hitarea.components>
+        <SlideController clickRegion="#paragraph-root"/>
+      </render-slide-hitarea.components>
+    </render-slide-hitarea>
+  </renderer>
 </goml>
 

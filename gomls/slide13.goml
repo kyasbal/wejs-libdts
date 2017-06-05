@@ -1,10 +1,12 @@
-<scene-slide build="3">
-  <camera/>
-  <mesh material="new(future-shader)"/>
-  <div class="vertical-center future-container">
-    <div>
-      <img src="./resources/future1.png" inBuild="1" outBuild="2"/>
-      <img class="bigger" src="./resources/future2.png" inBuild="2"/>
-    </div>
-  </div>
+<scene-slide build="2" bgColor="black">
+  <object class="editor-content-container">
+    <camera>
+      <camera.components>
+        <MouseCameraControl/>
+      </camera.components>
+    </camera>
+    <mesh geometry="cube" material="new(unlit)" color="red"/>
+    <light/>
+  </object>
+  <editor src="./resources/mouse.goml" inBuild="0" outBuild="1" runButton="true" language="xml"/>
 </scene-slide>

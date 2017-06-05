@@ -33,7 +33,7 @@ async function bundle(){
   for(let i = 0; i < slides.length; i++){
     const slide = slides[i];
     const index = /slide(\d+)\.goml/.exec(slide)[1];
-    slidesInArray[index - 1] = await readAsync(slide);
+    slidesInArray[index] = await readAsync(slide);
   }
   const bundled = handlebars.compile(header,{noEscape:true})({slides:slidesInArray});
   console.log(bundled);

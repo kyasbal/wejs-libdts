@@ -1,18 +1,10 @@
-@font-face
-  font-family: 'mplus-1p-regular'
-  src url('http://mplus-webfonts.sourceforge.jp/mplus-1p-regular.eot')
-  src url('http://mplus-webfonts.sourceforge.jp/mplus-1p-regular.eot?#iefix') format('embedded-opentype'),
-       url('http://mplus-webfonts.sourceforge.jp/mplus-1p-regular.woff') format('woff'),
-       url('http://mplus-webfonts.sourceforge.jp/mplus-1p-regular.ttf') format('truetype');
-
-
-html,body,div
+html,body
   margin 0px
   padding 0px
-  font-family 'mplus-1p-regular'
+  height 100%
 
-p,img,video
-  user-select none
+// p,img,video
+//   user-select none
 
 #canvas-container
   position absolute
@@ -21,18 +13,50 @@ p,img,video
   top 0px
   bottom 0px
 
-#source-container
-  font-size 3em
-  margin 0 auto
-  display flex
-  justify-content space-around
-  height 100%
-
 #model-source
   display flex
   justify-content space-around
   flex-direction column
   height 100%
+#editor-root
+  z-index 10
+  position absolute
+  left 0px
+  right 0px
+  top 0px
+  bottom 0px
+  pointer-events none
+  .single-editor-container-outer
+    position absolute
+    top 5%
+    bottom 5%
+    left 10%
+    right 10%
+    pointer-events all
+  .single-editor-container
+    height 100%
+    width 100%
+    display flex
+    flex-direction column
+    opacity 0.3
+    &:hover
+      opacity 0.9
+  .actual-editor-container
+    flex 1
+  .button-container
+    display flex
+    justify-content flex-end
+    .button-inner-container
+      width 120px
+      text-align center
+      border 4px red solid
+      &:hover
+        background-color rgba(255,255,255,0.8)
+        cursor pointer
+      p
+        color red
+        font-weight 600
+
 
 div#paragraph-root
   pointer-events none
@@ -42,6 +66,32 @@ div#paragraph-root
   right 0px
   top 0px
   bottom 0px
+
+#intro-container
+  position absolute
+  left 0px
+  right 0px
+  top 0px
+  bottom 0px
+  display flex
+  &>div
+    flex 1
+    display flex
+    flex-direction column
+    justify-content center
+  .intro-inner
+    background-color rgba(255,255,255,0.08)
+    margin 0 auto
+    padding 30px 100px
+    &>img
+      width 30%
+      margin 30px auto
+      display block
+    &>p
+      text-align center
+      font-size 2em
+      color white
+      text-shadow 1px 1px 2px #000
 
 .title-text
   color #9C8C69
@@ -106,8 +156,10 @@ div#paragraph-root
     flex-direction column
     width 33%
     text-align center
+    padding 50px 0px 0px 0px
     &.bottom-align
       flex-direction column-reverse
+      padding 0px 0px 50px 0px
     img
       width 40%
 

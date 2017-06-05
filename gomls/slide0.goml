@@ -1,0 +1,21 @@
+<scene-slide>
+  <camera/>
+  <mesh material="new(intro-shader)"/>
+  <div id="intro-container">
+    <div id="intro-container-left">
+      <div class="intro-inner">
+      <img src="./resources/icon.png"/>
+      <p text="@kyasbal-1994"></p>
+      <p text="未踏2016スーパークリエイタ"/>
+      <p text="1994年生まれ 22歳"/>
+    </div>
+    </div>
+    <div id="intro-container-right">
+      <div class="intro-inner">
+      <p text="グラフィックス系のエンジニア"/>
+      <p text="他にも開発環境系やCI周り、"/>
+      <p text="TypescriptとGLSLばっか書いてる人"/>
+    </div>
+    </div>
+  </div>
+</scene-slide>
