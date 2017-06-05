@@ -49,7 +49,7 @@ export default class EditorComponent extends ContainerComponent {
 
   private async _configure():Promise<void>{
     if(EditorComponent._configured)return;
-    monaco.languages.typescript.javascriptDefaults.addExtraLib(await this._readText("/libs/jquery-dts/index.d.ts"))
+    monaco.languages.typescript.javascriptDefaults.addExtraLib(await this._readText("jquery.d.ts"))
     monaco.languages.typescript.javascriptDefaults.addExtraLib(await this._readText("grimoire.d.ts"));
     EditorComponent._configured = true;
   }
