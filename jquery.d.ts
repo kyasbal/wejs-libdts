@@ -794,7 +794,7 @@ interface JQueryStatic {
      * @see {@link https://api.jquery.com/jQuery.ajaxTransport/}
      */
     ajaxTransport(dataType: string, handler: (opts: any, originalOpts: JQueryAjaxSettings, jqXHR: JQueryXHR) => any): void;
-    
+
     ajaxSettings: JQueryAjaxSettings;
 
      /**
