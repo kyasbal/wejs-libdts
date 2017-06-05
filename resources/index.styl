@@ -67,6 +67,32 @@ div#paragraph-root
   top 0px
   bottom 0px
 
+#intro-container
+  position absolute
+  left 0px
+  right 0px
+  top 0px
+  bottom 0px
+  display flex
+  &>div
+    flex 1
+    display flex
+    flex-direction column
+    justify-content center
+  .intro-inner
+    background-color rgba(255,255,255,0.08)
+    margin 0 auto
+    padding 30px 100px
+    &>img
+      width 30%
+      margin 30px auto
+      display block
+    &>p
+      text-align center
+      font-size 2em
+      color white
+      text-shadow 1px 1px 2px #000
+
 .title-text
   color #9C8C69
   font-size 36px
@@ -130,8 +156,10 @@ div#paragraph-root
     flex-direction column
     width 33%
     text-align center
+    padding 50px 0px 0px 0px
     &.bottom-align
       flex-direction column-reverse
+      padding 0px 0px 50px 0px
     img
       width 40%
 

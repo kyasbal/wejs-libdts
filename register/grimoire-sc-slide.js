@@ -4165,8 +4165,9 @@ exports.default = function () {
                             _grimoirejs2.default.registerNode("img", ["Image"]);
                             _grimoirejs2.default.registerNode("video", ["Video"]);
                             _grimoirejs2.default.registerNode("editor", ["Editor"]);
+                            _grimoirejs2.default.registerNode("render-slide-hitarea", ["RenderSlideHitarea"], {}, "render-slide");
 
-                        case 12:
+                        case 13:
                         case "end":
                             return _context.stop();
                     }
@@ -35019,7 +35020,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -35035,23 +35036,23 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _Component2 = __webpack_require__(2);
+var _Component2 = __webpack_require__(1);
 
 var _Component3 = _interopRequireDefault(_Component2);
 
-var _FrameBuffer = __webpack_require__(8);
+var _FrameBuffer = __webpack_require__(5);
 
 var _FrameBuffer2 = _interopRequireDefault(_FrameBuffer);
 
-var _Texture2D = __webpack_require__(10);
+var _Texture2D = __webpack_require__(6);
 
 var _Texture2D2 = _interopRequireDefault(_Texture2D);
 
-var _Renderbuffer = __webpack_require__(9);
+var _Renderbuffer = __webpack_require__(12);
 
 var _Renderbuffer2 = _interopRequireDefault(_Renderbuffer);
 
-var _SlideComponent = __webpack_require__(1);
+var _SlideComponent = __webpack_require__(2);
 
 var _SlideComponent2 = _interopRequireDefault(_SlideComponent);
 
@@ -35435,6 +35436,11 @@ var RenderSlideComponent = function (_Component) {
                 window.location.hash = slideInfo.slideIndex + "-" + slideInfo.build;
             }
         }
+    }, {
+        key: "camera",
+        get: function get() {
+            return this._getSlide(this._currentFrame).slide.camera;
+        }
     }]);
 
     return RenderSlideComponent;
@@ -35451,6 +35457,14 @@ RenderSlideComponent.attributes = {
 
 /***/ }),
 /* 1 */
+/***/ (function(module, exports) {
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});exports.default=window.GrimoireJS.Node.Component;
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35462,15 +35476,15 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _Component2 = __webpack_require__(2);
+var _Component2 = __webpack_require__(1);
 
 var _Component3 = _interopRequireDefault(_Component2);
 
-var _CameraComponent = __webpack_require__(6);
+var _CameraComponent = __webpack_require__(9);
 
 var _CameraComponent2 = _interopRequireDefault(_CameraComponent);
 
-var _MaterialComponent = __webpack_require__(7);
+var _MaterialComponent = __webpack_require__(10);
 
 var _MaterialComponent2 = _interopRequireDefault(_MaterialComponent);
 
@@ -35574,14 +35588,6 @@ SlideComponent.attributes = {
 };
 
 /***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});exports.default=window.GrimoireJS.Node.Component;
-
-/***/ }),
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -35594,7 +35600,184 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _Component2 = __webpack_require__(2);
+var _MeshIndexCalculator = __webpack_require__(13);
+
+var _MeshIndexCalculator2 = _interopRequireDefault(_MeshIndexCalculator);
+
+var _FrameBuffer = __webpack_require__(5);
+
+var _FrameBuffer2 = _interopRequireDefault(_FrameBuffer);
+
+var _Texture2D = __webpack_require__(6);
+
+var _Texture2D2 = _interopRequireDefault(_Texture2D);
+
+var _RenderBuffer = __webpack_require__(11);
+
+var _RenderBuffer2 = _interopRequireDefault(_RenderBuffer);
+
+var _TextureSizeCalculator = __webpack_require__(14);
+
+var _TextureSizeCalculator2 = _interopRequireDefault(_TextureSizeCalculator);
+
+var _RenderSlideComponent = __webpack_require__(0);
+
+var _RenderSlideComponent2 = _interopRequireDefault(_RenderSlideComponent);
+
+var _Component2 = __webpack_require__(1);
+
+var _Component3 = _interopRequireDefault(_Component2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var RenderSlideHitAreaComponent = function (_Component) {
+    _inherits(RenderSlideHitAreaComponent, _Component);
+
+    function RenderSlideHitAreaComponent() {
+        _classCallCheck(this, RenderSlideHitAreaComponent);
+
+        var _this = _possibleConstructorReturn(this, (RenderSlideHitAreaComponent.__proto__ || Object.getPrototypeOf(RenderSlideHitAreaComponent)).apply(this, arguments));
+
+        _this._readCache = new Uint8Array(4);
+        return _this;
+    }
+
+    _createClass(RenderSlideHitAreaComponent, [{
+        key: "$mount",
+        value: function $mount() {
+            this._sceneRenderer = this.node.getComponent(_RenderSlideComponent2.default);
+            if (!this._sceneRenderer) {
+                throw new Error("The node attaching RenderHitArea should contain RenderScene.");
+            }
+            this._gl = this.companion.get("gl");
+            this._canvas = this.companion.get("canvasElement");
+            this.hitareaTexture = new _Texture2D2.default(this._gl);
+            this.hitareaRenderbuffer = new _RenderBuffer2.default(this._gl);
+            if (this.hitareaFBO) {
+                this.hitareaFBO.destroy();
+                this.hitareaFBO = null;
+            }
+        }
+    }, {
+        key: "$resizeBuffer",
+        value: function $resizeBuffer(args) {
+            var size = _TextureSizeCalculator2.default.getPow2Size(args.width, args.height);
+            this._bufferSize = [size.width, size.height];
+            this.hitareaTexture.update(0, size.width, size.height, 0, WebGLRenderingContext.RGBA, WebGLRenderingContext.UNSIGNED_BYTE);
+            this.hitareaRenderbuffer.update(WebGLRenderingContext.DEPTH_COMPONENT16, size.width, size.height);
+            if (!this.hitareaFBO) {
+                this.hitareaFBO = new _FrameBuffer2.default(this._gl);
+                this.hitareaFBO.update(this.hitareaTexture);
+                this.hitareaFBO.update(this.hitareaRenderbuffer);
+            }
+        }
+    }, {
+        key: "$render",
+        value: function $render(args) {
+            if (!this._mouseInside) {
+                return;
+            }
+            this.hitareaFBO.bind();
+            this._gl.viewport(0, 0, this._bufferSize[0], this._bufferSize[1]);
+            // clear buffer if needed
+            this._gl.clearColor(0, 0, 0, 0);
+            this._gl.clear(WebGLRenderingContext.COLOR_BUFFER_BIT);
+            this._gl.clearDepth(1);
+            this._gl.clear(WebGLRenderingContext.DEPTH_BUFFER_BIT);
+            var camera = this._sceneRenderer.camera || args.camera;
+            camera.renderScene({
+                renderer: this._sceneRenderer,
+                camera: camera,
+                buffers: args.buffers,
+                layer: "default",
+                viewport: args.viewport,
+                timer: args.timer,
+                technique: "hitarea",
+                sceneDescription: {}
+            });
+            this._gl.flush();
+            this._gl.readPixels(this._lastPosition[0] * this._bufferSize[0], this._lastPosition[1] * this._bufferSize[1], 1, 1, WebGLRenderingContext.RGBA, WebGLRenderingContext.UNSIGNED_BYTE, this._readCache);
+            var index = _MeshIndexCalculator2.default.fromColor(this._readCache);
+            if (index === 0) {
+                if (this._lastRenderable instanceof _Component3.default) {
+                    this._lastRenderable.node.emit("mouseleave", this._lastRenderable);
+                }
+                this._lastRenderable = null;
+            } else {
+                var r = camera.containedScene.queueRegistory.getByIndex(index - 1);
+                if (this._lastRenderable !== r) {
+                    if (this._lastRenderable instanceof _Component3.default) {
+                        this._lastRenderable.node.emit("mouseleave", this._lastRenderable);
+                    }
+                    if (r instanceof _Component3.default) {
+                        r.node.emit("mouseenter", r);
+                    }
+                } else {
+                    if (r instanceof _Component3.default) {
+                        if (this._mouseMoved) {
+                            r.node.emit("mousemove", r);
+                        } else {
+                            r.node.emit("mouseon", r);
+                        }
+                    }
+                }
+                this._lastRenderable = r;
+            }
+            this._gl.bindFramebuffer(this._gl.FRAMEBUFFER, null);
+        }
+    }, {
+        key: "$mousemove",
+        value: function $mousemove(v) {
+            this._lastPosition = [v.viewportNormalizedX, 1.0 - v.viewportNormalizedY];
+            this._mouseMoved = true;
+        }
+    }, {
+        key: "$mouseenter",
+        value: function $mouseenter(v) {
+            this._mouseInside = true;
+            this._lastPosition = [v.viewportNormalizedX, 1.0 - v.viewportNormalizedY];
+            this._mouseMoved = true;
+        }
+    }, {
+        key: "$mouseleave",
+        value: function $mouseleave(v) {
+            this._mouseInside = false;
+            this._lastPosition = [v.viewportNormalizedX, 1.0 - v.viewportNormalizedY];
+            this._mouseMoved = true;
+            if (this._lastRenderable instanceof _Component3.default) {
+                this._lastRenderable.node.emit("mouseleave", this._lastRenderable);
+            }
+            this._lastRenderable = null;
+        }
+    }]);
+
+    return RenderSlideHitAreaComponent;
+}(_Component3.default);
+
+exports.default = RenderSlideHitAreaComponent;
+
+RenderSlideHitAreaComponent.attributes = {};
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _Component2 = __webpack_require__(1);
 
 var _Component3 = _interopRequireDefault(_Component2);
 
@@ -35660,7 +35843,23 @@ SlideControllerComponent.attributes = {
 };
 
 /***/ }),
-/* 4 */
+/* 5 */
+/***/ (function(module, exports) {
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});exports.default=window.GrimoireJS.lib.fundamental.Resource.FrameBuffer;
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports) {
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});exports.default=window.GrimoireJS.lib.fundamental.Resource.Texture2D;
+
+/***/ }),
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35670,7 +35869,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _grimoirejs = __webpack_require__(11);
+var _grimoirejs = __webpack_require__(15);
 
 var _grimoirejs2 = _interopRequireDefault(_grimoirejs);
 
@@ -35678,13 +35877,17 @@ var _RenderSlideComponent = __webpack_require__(0);
 
 var _RenderSlideComponent2 = _interopRequireDefault(_RenderSlideComponent);
 
-var _SlideComponent = __webpack_require__(1);
+var _SlideComponent = __webpack_require__(2);
 
 var _SlideComponent2 = _interopRequireDefault(_SlideComponent);
 
-var _SlideControllerComponent = __webpack_require__(3);
+var _SlideControllerComponent = __webpack_require__(4);
 
 var _SlideControllerComponent2 = _interopRequireDefault(_SlideControllerComponent);
+
+var _RenderSlideHitareaComponent = __webpack_require__(3);
+
+var _RenderSlideHitareaComponent2 = _interopRequireDefault(_RenderSlideHitareaComponent);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -35721,12 +35924,13 @@ exports.default = function () {
                     switch (_context.prev = _context.next) {
                         case 0:
                             _grimoirejs2.default.registerComponent("RenderSlide", _RenderSlideComponent2.default);
+                            _grimoirejs2.default.registerComponent("RenderSlideHitarea", _RenderSlideHitareaComponent2.default);
                             _grimoirejs2.default.registerComponent("Slide", _SlideComponent2.default);
                             _grimoirejs2.default.registerComponent("SlideController", _SlideControllerComponent2.default);
                             _grimoirejs2.default.registerNode("render-slide", ["RenderSlide"]);
                             _grimoirejs2.default.registerNode("scene-slide", ["Slide"], {}, "scene");
 
-                        case 5:
+                        case 6:
                         case "end":
                             return _context.stop();
                     }
@@ -35737,7 +35941,7 @@ exports.default = function () {
 };
 
 /***/ }),
-/* 5 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35751,26 +35955,31 @@ var _RenderSlideComponent = __webpack_require__(0);
 
 var _RenderSlideComponent2 = _interopRequireDefault(_RenderSlideComponent);
 
-var _SlideComponent = __webpack_require__(1);
+var _RenderSlideHitareaComponent = __webpack_require__(3);
+
+var _RenderSlideHitareaComponent2 = _interopRequireDefault(_RenderSlideHitareaComponent);
+
+var _SlideComponent = __webpack_require__(2);
 
 var _SlideComponent2 = _interopRequireDefault(_SlideComponent);
 
-var _SlideControllerComponent = __webpack_require__(3);
+var _SlideControllerComponent = __webpack_require__(4);
 
 var _SlideControllerComponent2 = _interopRequireDefault(_SlideControllerComponent);
 
-var _main = __webpack_require__(4);
+var _main = __webpack_require__(7);
 
 var _main2 = _interopRequireDefault(_main);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var __VERSION__ = "0.0.15";
+var __VERSION__ = "0.0.17";
 var __NAME__ = "grimoirejs-slide-system";
 
 var __EXPOSE__ = {
     "Components": {
         "RenderSlideComponent": _RenderSlideComponent2.default,
+        "RenderSlideHitareaComponent": _RenderSlideHitareaComponent2.default,
         "SlideComponent": _SlideComponent2.default,
         "SlideControllerComponent": _SlideControllerComponent2.default
     }
@@ -35785,7 +35994,7 @@ window["GrimoireJS"].lib.slide_system = __EXPOSE__;
 exports.default = __BASE__;
 
 /***/ }),
-/* 6 */
+/* 9 */
 /***/ (function(module, exports) {
 
 	Object.defineProperty(exports, "__esModule", {
@@ -35793,7 +36002,7 @@ exports.default = __BASE__;
 	});exports.default=window.GrimoireJS.lib.fundamental.Components.CameraComponent;
 
 /***/ }),
-/* 7 */
+/* 10 */
 /***/ (function(module, exports) {
 
 	Object.defineProperty(exports, "__esModule", {
@@ -35801,15 +36010,7 @@ exports.default = __BASE__;
 	});exports.default=window.GrimoireJS.lib.fundamental.Components.MaterialComponent;
 
 /***/ }),
-/* 8 */
-/***/ (function(module, exports) {
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});exports.default=window.GrimoireJS.lib.fundamental.Resource.FrameBuffer;
-
-/***/ }),
-/* 9 */
+/* 11 */
 /***/ (function(module, exports) {
 
 	Object.defineProperty(exports, "__esModule", {
@@ -35817,15 +36018,31 @@ exports.default = __BASE__;
 	});exports.default=window.GrimoireJS.lib.fundamental.Resource.RenderBuffer;
 
 /***/ }),
-/* 10 */
+/* 12 */
 /***/ (function(module, exports) {
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
-	});exports.default=window.GrimoireJS.lib.fundamental.Resource.Texture2D;
+	});exports.default=window.GrimoireJS.lib.fundamental.Resource.RenderBuffer;
 
 /***/ }),
-/* 11 */
+/* 13 */
+/***/ (function(module, exports) {
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});exports.default=window.GrimoireJS.lib.fundamental.Util.MeshIndexCalculator;
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports) {
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});exports.default=window.GrimoireJS.lib.fundamental.Util.TextureSizeCalculator;
+
+/***/ }),
+/* 15 */
 /***/ (function(module, exports) {
 
 	Object.defineProperty(exports, "__esModule", {

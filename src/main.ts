@@ -29,6 +29,7 @@ export default ()=>{
     gr.registerNode("img",["Image"]);
     gr.registerNode("video",["Video"]);
     gr.registerNode("editor",["Editor"]);
+    gr.registerNode("render-slide-hitarea",["RenderSlideHitarea"],{},"render-slide");
   });
   gr(()=>{
     $("#editor-root").on("keydown",(e)=>{

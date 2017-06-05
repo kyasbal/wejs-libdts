@@ -1,7 +1,7 @@
 <scene-slide build="5" bgColor="black">
   <object class="editor-content-container">
     <camera/>
-    <mesh class="the-mesh" geometry="cube" material="new(unlit)" color="red"/>
+    <mesh class="mesh1" geometry="cube" material="new(unlit)" color="red"/>
     <light/>
   </object>
   <editor src="./resources/include.html" inBuild="1" outBuild="2" runButton="false" language="html"/>

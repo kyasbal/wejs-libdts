@@ -5,7 +5,7 @@
         <MouseCameraControl/>
       </camera.components>
     </camera>
-    <mesh class="the-mesh" geometry="cube" material="new(unlit)" color="red"/>
+    <mesh geometry="cube" material="new(unlit)" color="red"/>
     <light/>
   </object>
   <editor src="./resources/mouse.goml" inBuild="0" outBuild="1" runButton="true" language="xml"/>
