@@ -1,4 +1,4 @@
-<scene-slide bgColor="black">
+<scene-slide bgColor="black" build="3" buildTransitionTime="0.2">
   <camera>
     <camera.components>
       <MouseCameraControl/>
@@ -19,4 +19,7 @@
     </model.components>
   </model>
   <mesh rotation="x(-90)" position="0,-2.5,0" scale="20"/>
+  <editor id="source-container" src="./gomls/slide16.goml" inBuild="1" outBuild="2" language="xml" runButton="false">
+
+  </editor>
 </scene-slide>

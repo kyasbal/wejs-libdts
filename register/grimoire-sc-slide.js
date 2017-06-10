@@ -73,7 +73,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 314);
+/******/ 	return __webpack_require__(__webpack_require__.s = 316);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -3474,7 +3474,7 @@ exports.default = __BASE__;
 
 __webpack_require__(305);
 
-__webpack_require__(313);
+__webpack_require__(315);
 
 __webpack_require__(125);
 
@@ -3941,6 +3941,14 @@ var _Component2 = __webpack_require__(86);
 
 var _Component3 = _interopRequireDefault(_Component2);
 
+var _TransformComponent = __webpack_require__(307);
+
+var _TransformComponent2 = _interopRequireDefault(_TransformComponent);
+
+var _Quaternion = __webpack_require__(310);
+
+var _Quaternion2 = _interopRequireDefault(_Quaternion);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -3949,35 +3957,42 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+/**
+ * 定速回転のためのコンポーネント
+ */
 var Rotate = function (_Component) {
     _inherits(Rotate, _Component);
 
     function Rotate() {
         _classCallCheck(this, Rotate);
 
-        var _this = _possibleConstructorReturn(this, (Rotate.__proto__ || Object.getPrototypeOf(Rotate)).apply(this, arguments));
-
-        _this._currentAngle = 0;
-        return _this;
+        return _possibleConstructorReturn(this, (Rotate.__proto__ || Object.getPrototypeOf(Rotate)).apply(this, arguments));
     }
 
     _createClass(Rotate, [{
+        key: "$mount",
+        value: function $mount() {
+            this._transform = this.node.getComponent(_TransformComponent2.default);
+        }
+    }, {
         key: "$update",
         value: function $update() {
-            this._currentAngle += this.getAttribute("speed");
-            this.node.setAttribute("rotation", "y(" + this._currentAngle + ")");
+            this._transform.rotation = _Quaternion2.default.multiply(this._transform.rotation, _Quaternion2.default.euler(0, this.getAttribute("speed"), 0));
         }
     }]);
 
     return Rotate;
 }(_Component3.default);
+/**
+ * このコンポーネントが持つ属性
+ */
+
 
 exports.default = Rotate;
-
 Rotate.attributes = {
     speed: {
-        converter: "Number",
-        default: 0.1
+        converter: "String",
+        default: 0.01
     }
 };
 
@@ -4073,19 +4088,19 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-__webpack_require__(312);
+__webpack_require__(314);
 
-__webpack_require__(309);
-
-__webpack_require__(307);
-
-__webpack_require__(306);
+__webpack_require__(311);
 
 __webpack_require__(308);
 
-__webpack_require__(310);
+__webpack_require__(306);
 
-var _grimoirejs = __webpack_require__(311);
+__webpack_require__(309);
+
+__webpack_require__(312);
+
+var _grimoirejs = __webpack_require__(313);
 
 var _grimoirejs2 = _interopRequireDefault(_grimoirejs);
 
@@ -10016,6 +10031,14 @@ module.exports = "@Technique default{\n@Pass{\n@BlendFunc(SRC_ALPHA,ONE_MINUS_SR
 
 /***/ }),
 /* 307 */
+/***/ (function(module, exports) {
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});exports.default=window.GrimoireJS.lib.fundamental.Components.TransformComponent;
+
+/***/ }),
+/* 308 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -22335,7 +22358,7 @@ module.exports = "@Technique default{\n@Pass{\n  @BlendFunc(SRC_ALPHA,ONE_MINUS_
 //# sourceMappingURL=grimoire-fundamental.js.map
 
 /***/ }),
-/* 308 */
+/* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -24919,7 +24942,15 @@ module.exports = "@Pass{\n@BlendFunc(SRC_ALPHA,ONE_MINUS_SRC_ALPHA)\n@ExposeMacr
 //# sourceMappingURL=grimoire-gltf.js.map
 
 /***/ }),
-/* 309 */
+/* 310 */
+/***/ (function(module, exports) {
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});exports.default=window.GrimoireJS.lib.math.Quaternion;
+
+/***/ }),
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -34940,7 +34971,7 @@ module.exports = vec2;
 //# sourceMappingURL=grimoire-math.js.map
 
 /***/ }),
-/* 310 */
+/* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -36053,7 +36084,7 @@ exports.default = __BASE__;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 311 */
+/* 313 */
 /***/ (function(module, exports) {
 
 	Object.defineProperty(exports, "__esModule", {
@@ -36061,7 +36092,7 @@ exports.default = __BASE__;
 	});exports.default=window.GrimoireJS;
 
 /***/ }),
-/* 312 */
+/* 314 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -41493,7 +41524,7 @@ function isUndefined(arg) {
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 313 */
+/* 315 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/**
@@ -42236,7 +42267,7 @@ function isUndefined(arg) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(115)))
 
 /***/ }),
-/* 314 */
+/* 316 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(117);

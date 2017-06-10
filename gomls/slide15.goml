@@ -1,10 +1,14 @@
-<scene-slide build="3">
-  <camera/>
-  <mesh material="new(future-shader)"/>
-  <div class="vertical-center future-container">
-    <div>
-      <img src="./resources/future1.png" inBuild="1" outBuild="2"/>
-      <img class="bigger" src="./resources/future2.png" inBuild="2"/>
-    </div>
-  </div>
+<scene-slide build="2" bgColor="black">
+  <camera>
+    <camera.components>
+      <MouseCameraControl/>
+    </camera.components>
+  </camera>
+  <model src="./resources/avocado/Avocado.gltf" scale="4">
+    <model.components>
+      <Rotate speed="0.1"/>
+    </model.components>
+  </model>
+  <light/>
+  <editor id="source-container" src="./resources/rotate.ts" inBuild="1" outBuild="2" language="typescript" runButton="false"/>
 </scene-slide>

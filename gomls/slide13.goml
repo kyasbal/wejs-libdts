@@ -6,7 +6,6 @@
       </camera.components>
     </camera>
     <mesh geometry="cube" material="new(unlit)" color="red"/>
-    <light/>
   </object>
   <editor src="./resources/mouse.goml" inBuild="0" outBuild="1" runButton="true" language="xml"/>
 </scene-slide>

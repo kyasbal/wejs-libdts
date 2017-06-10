@@ -78,7 +78,7 @@
   <light/>
   <object>
     <object.components>
-      <Rotate speed="-0.2"/>
+      <Rotate speed="-0.01"/>
     </object.components>
     <light color="blue" type="point" position="2,0,0"/>
     <light color="green" type="point" position="-2,0,0"/>
@@ -86,7 +86,7 @@
   </object>
   <model src="./resources/scifi-model/SciFiHelmet.gltf" scale="2">
     <model.components>
-      <Rotate speed="0.3"/>
+      <Rotate speed="0.015"/>
     </model.components>
   </model>
   <mesh rotation="x(-90)" position="0,-2.5,0" scale="20"/>
@@ -225,12 +225,40 @@
       </camera.components>
     </camera>
     <mesh geometry="cube" material="new(unlit)" color="red"/>
-    <light/>
   </object>
   <editor src="./resources/mouse.goml" inBuild="0" outBuild="1" runButton="true" language="xml"/>
 </scene-slide>
 
   <!--Slide 14-->
+  <scene-slide build="3" bgColor="black">
+  <camera>
+    <camera.components>
+      <MouseCameraControl/>
+    </camera.components>
+  </camera>
+  <model src="./resources/avocado/Avocado.gltf" scale="4"/>
+  <light/>
+  <editor src="./resources/rotate.goml" inBuild="1" outBuild="2" runButton="false" language="xml"/>
+  <editor src="./resources/rotate2.goml" inBuild="2" outBuild="3" runButton="false" language="xml"/>
+</scene-slide>
+
+  <!--Slide 15-->
+  <scene-slide build="2" bgColor="black">
+  <camera>
+    <camera.components>
+      <MouseCameraControl/>
+    </camera.components>
+  </camera>
+  <model src="./resources/avocado/Avocado.gltf" scale="4">
+    <model.components>
+      <Rotate speed="0.1"/>
+    </model.components>
+  </model>
+  <light/>
+  <editor id="source-container" src="./resources/rotate.ts" inBuild="1" outBuild="2" language="typescript" runButton="false"/>
+</scene-slide>
+
+  <!--Slide 16-->
   <scene-slide bgColor="black" build="3" buildTransitionTime="0.2">
   <camera>
     <camera.components>
@@ -240,7 +268,7 @@
   <light/>
   <object>
     <object.components>
-      <Rotate speed="-0.2"/>
+      <Rotate speed="-0.01"/>
     </object.components>
     <light color="blue" type="point" position="2,0,0"/>
     <light color="green" type="point" position="-2,0,0"/>
@@ -248,25 +276,13 @@
   </object>
   <model src="./resources/scifi-model/SciFiHelmet.gltf" scale="2">
     <model.components>
-      <Rotate speed="0.3"/>
+      <Rotate speed="0.015"/>
     </model.components>
   </model>
   <mesh rotation="x(-90)" position="0,-2.5,0" scale="20"/>
-  <editor id="source-container" src="./gomls/slide14.goml" inBuild="1" outBuild="2" language="xml" runButton="false">
+  <editor id="source-container" src="./gomls/slide16.goml" inBuild="1" outBuild="2" language="xml" runButton="false">
 
   </editor>
-</scene-slide>
-
-  <!--Slide 15-->
-  <scene-slide build="3">
-  <camera/>
-  <mesh material="new(future-shader)"/>
-  <div class="vertical-center future-container">
-    <div>
-      <img src="./resources/future1.png" inBuild="1" outBuild="2"/>
-      <img class="bigger" src="./resources/future2.png" inBuild="2"/>
-    </div>
-  </div>
 </scene-slide>
 
   <renderer>

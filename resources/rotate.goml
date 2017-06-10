@@ -5,6 +5,6 @@
         <MouseCameraControl/>
       </camera.components>
     </camera>
-    <mesh class="mesh1" geometry="cube" material="new(unlit)" color="red"/>
+    <model src="./resources/avocado/Avocado.gltf"/>
   </scene>
 </goml>
