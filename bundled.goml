@@ -11,7 +11,7 @@
   <!--Slide 0-->
   <scene-slide>
   <camera/>
-  <mesh material="new(intro-shader)"/>
+  <mesh material="new(intro-shader)" shift="0.55"/>
   <div id="intro-container">
     <div id="intro-container-left">
       <div class="intro-inner">
@@ -283,6 +283,28 @@
   <editor id="source-container" src="./gomls/slide16.goml" inBuild="1" outBuild="2" language="xml" runButton="false">
 
   </editor>
+</scene-slide>
+
+  <!--Slide 17-->
+  <scene-slide build="3" class="last-slide">
+  <camera/>
+  <mesh material="new(intro-shader)" shift="0" class="last-shader">
+  </mesh>
+  <div id="intro-container">
+    <div id="intro-container-left">
+      <div class="intro-inner">
+        <p text="この後の進行"></p>
+      </div>
+    </div>
+    <div id="intro-container-right">
+      <div class="intro-inner">
+        <p text="基礎編: @case2912" inBuild="1"/>
+        <p text="基本的なタグやコンポーネントの紹介" inBuild="1"/>
+        <p text="応用編: @moajo" inBuild="2"/>
+        <p text="タグやコンポーネントを作ってみる" inBuild="2"/>
+      </div>
+    </div>
+  </div>
 </scene-slide>
 
   <renderer>

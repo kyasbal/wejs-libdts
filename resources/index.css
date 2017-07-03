@@ -215,11 +215,12 @@ div#paragraph-root {
   align-items: center;
 }
 .fusion-root .fusion-logo {
-  width: 512px;
-  height: 512px;
+  width: 350px;
+  height: 350px;
 }
 .fusion-root .fusion-subtitle {
   color: #000;
+  text-shadow: 0 1px 3px #fff;
   font-size: 45px;
 }
 .fusion-root .fusion-root-child {
@@ -228,5 +229,5 @@ div#paragraph-root {
   padding: 20px;
 }
 .fusion-root .fusion-root-child img {
-  width: 512px;
+  width: 350px;
 }

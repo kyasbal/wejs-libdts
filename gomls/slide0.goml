@@ -1,6 +1,6 @@
 <scene-slide>
   <camera/>
-  <mesh material="new(intro-shader)"/>
+  <mesh material="new(intro-shader)" shift="0.55"/>
   <div id="intro-container">
     <div id="intro-container-left">
       <div class="intro-inner">

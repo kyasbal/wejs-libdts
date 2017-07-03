@@ -921,6 +921,14 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _main = __webpack_require__(9);
+
+var _main2 = _interopRequireDefault(_main);
+
+var _grimoirejs = __webpack_require__(8);
+
+var _grimoirejs2 = _interopRequireDefault(_grimoirejs);
+
 var _ContainerComponent = __webpack_require__(0);
 
 var _ContainerComponent2 = _interopRequireDefault(_ContainerComponent);
@@ -949,19 +957,10 @@ var _VideoComponent = __webpack_require__(7);
 
 var _VideoComponent2 = _interopRequireDefault(_VideoComponent);
 
-var _main = __webpack_require__(9);
-
-var _main2 = _interopRequireDefault(_main);
-
-var _grimoirejs = __webpack_require__(8);
-
-var _grimoirejs2 = _interopRequireDefault(_grimoirejs);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var __VERSION__ = "1.0.0";
 var __NAME__ = "grimoirejs-sc-slide";
-
 var __EXPOSE__ = {
     "Components": {
         "ContainerComponent": _ContainerComponent2.default,
@@ -973,7 +972,6 @@ var __EXPOSE__ = {
         "VideoComponent": _VideoComponent2.default
     }
 };
-
 _grimoirejs2.default.notifyRegisteringPlugin(__NAME__);
 var __BASE__ = (0, _main2.default)();
 Object.assign(__EXPOSE__, {
@@ -2889,7 +2887,11 @@ var Texture2D = function (_ResourceBase) {
                 if (pixels === void 0) {
                     pixels = null;
                 }
-                this.gl.texImage2D(WebGLRenderingContext.TEXTURE_2D, level, format, Math.max(1, width), Math.max(1, height), border, format, type, pixels);
+                if (width === 0 || height === 0) {
+                    this.gl.texImage2D(WebGLRenderingContext.TEXTURE_2D, level, WebGLRenderingContext.RGBA, 1, 1, 0, WebGLRenderingContext.RGBA, WebGLRenderingContext.UNSIGNED_BYTE, new Uint8Array([0, 0, 0, 0]));
+                } else {
+                    this.gl.texImage2D(WebGLRenderingContext.TEXTURE_2D, level, format, width, height, border, format, type, pixels);
+                }
             }
             this._ensureMipmap();
             this.valid = true;
