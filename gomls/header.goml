@@ -7,6 +7,7 @@
   <import-material typeName="space-shader" src="./resources/shaders/space.sort"/>
   <import-material typeName="future-shader" src="./resources/shaders/future.sort"/>
   <import-material typeName="triangle-shader" src="./resources/shaders/triangle.sort"/>
+  <import-material typeName="heart-shader" src="./resources/shaders/heart.sort"/>
   <material type="transition-default" class="transition" id="default"/>
   {{#each slides}}
   <!--Slide {{@index}}-->

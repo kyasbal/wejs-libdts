@@ -9,9 +9,9 @@
     <object.components>
       <Rotate speed="-0.01"/>
     </object.components>
-    <light color="blue" type="point" position="2,0,0"/>
-    <light color="green" type="point" position="-2,0,0"/>
-    <light color="red" type="point" position="0,0,2"/>
+    <light color="blue" type="point" position="2,0,0" intensity="10"/>
+    <light color="green" type="point" position="-2,0,0" intensity="10"/>
+    <light color="red" type="point" position="0,0,2" intensity="10"/>
   </object>
   <model src="./resources/scifi-model/SciFiHelmet.gltf" scale="2">
     <model.components>

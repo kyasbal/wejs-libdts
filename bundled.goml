@@ -7,26 +7,29 @@
   <import-material typeName="space-shader" src="./resources/shaders/space.sort"/>
   <import-material typeName="future-shader" src="./resources/shaders/future.sort"/>
   <import-material typeName="triangle-shader" src="./resources/shaders/triangle.sort"/>
+  <import-material typeName="heart-shader" src="./resources/shaders/heart.sort"/>
   <material type="transition-default" class="transition" id="default"/>
   <!--Slide 0-->
-  <scene-slide>
+  <scene-slide build="3" class="intro-slide">
   <camera/>
-  <mesh material="new(intro-shader)" shift="0.55"/>
+  <mesh material="new(intro-shader)" shift="0.55" class="intro-shader" brightness="4"/>
   <div id="intro-container">
     <div id="intro-container-left">
       <div class="intro-inner">
       <img src="./resources/icon.png"/>
+      <p text="石井 翔"/>
       <p text="@kyasbal-1994"></p>
-      <p text="未踏2016スーパークリエイタ"/>
-      <p text="1994年生まれ 22歳"/>
+      <p text="未踏2016クリエイター"/>
     </div>
     </div>
     <div id="intro-container-right">
       <div class="intro-inner">
-      <p text="グラフィックス系のエンジニア"/>
-      <p text="他にも開発環境系やCI周り、"/>
-      <p text="TypescriptとGLSLばっか書いてる人"/>
-    </div>
+        <p text="グラフィックス系のエンジニア"/>
+        <p text="他にも開発環境系やCI周り、"/>
+        <p text="TypescriptとGLSLばっか書いてる人"/>
+        <p text="🎉最近院試受かった🎉" inBuild="1"/>
+        <p text="HTML5カンファレンスでWebGLの未来をドヤ顔で語るよ" inBuild="2"/>
+      </div>
     </div>
   </div>
 </scene-slide>
@@ -80,9 +83,9 @@
     <object.components>
       <Rotate speed="-0.01"/>
     </object.components>
-    <light color="blue" type="point" position="2,0,0"/>
-    <light color="green" type="point" position="-2,0,0"/>
-    <light color="red" type="point" position="0,0,2"/>
+    <light color="blue" type="point" position="2,0,0" intensity="10"/>
+    <light color="green" type="point" position="-2,0,0" intensity="10"/>
+    <light color="red" type="point" position="0,0,2" intensity="10"/>
   </object>
   <model src="./resources/scifi-model/SciFiHelmet.gltf" scale="2">
     <model.components>
@@ -270,9 +273,9 @@
     <object.components>
       <Rotate speed="-0.01"/>
     </object.components>
-    <light color="blue" type="point" position="2,0,0"/>
-    <light color="green" type="point" position="-2,0,0"/>
-    <light color="red" type="point" position="0,0,2"/>
+    <light color="blue" type="point" position="2,0,0" intensity="10"/>
+    <light color="green" type="point" position="-2,0,0" intensity="10"/>
+    <light color="red" type="point" position="0,0,2" intensity="10"/>
   </object>
   <model src="./resources/scifi-model/SciFiHelmet.gltf" scale="2">
     <model.components>
@@ -288,22 +291,66 @@
   <!--Slide 17-->
   <scene-slide build="3" class="last-slide">
   <camera/>
-  <mesh material="new(intro-shader)" shift="0" class="last-shader">
+  <mesh material="new(intro-shader)" shift="0" class="last-shader" saturation="0.2" brightness="2.0">
   </mesh>
   <div id="intro-container">
     <div id="intro-container-left">
       <div class="intro-inner">
-        <p text="この後の進行"></p>
+        <p text="リーダーシップ"></p>
       </div>
     </div>
     <div id="intro-container-right">
       <div class="intro-inner">
-        <p text="基礎編: @case2912" inBuild="1"/>
-        <p text="基本的なタグやコンポーネントの紹介" inBuild="1"/>
-        <p text="応用編: @moajo" inBuild="2"/>
-        <p text="タグやコンポーネントを作ってみる" inBuild="2"/>
+        <p text="邪悪にならない" inBuild="1"/>
+        <p text="気がついたら同じ苦労をしろと思ってないか?" inBuild="1"/>
+        <p text="文句言うより全部実装" inBuild="2"/>
+        <p text="だめだったら全部作り直す" inBuild="2"/>
       </div>
     </div>
+  </div>
+</scene-slide>
+
+  <!--Slide 18-->
+  <scene-slide build="2" class="heart-slide">
+  <camera>
+  </camera>
+  <mesh material="new(heart-shader)" class="heart-shader"/>
+<div class="vertical-center">
+    <p text="プロダクト愛" class="center-text medium" outBuild="1"/>
+  </div>
+  <div class="vertical-center">
+    <p text="世界観への狂信" class="center-text medium" inBuild="1"/>
+  </div>
+</scene-slide>
+
+  <!--Slide 19-->
+  <scene-slide build="5">
+  <camera/>
+  <mesh material="new(intro-shader)" shift="0" brightness="4"/>
+  <div id="intro-container">
+    <div id="intro-container-left">
+      <div class="intro-inner">
+        <p text="一言でわかるコンセプト"></p>
+      </div>
+    </div>
+    <div id="intro-container-right">
+      <div class="intro-inner">
+        <p text="全員が口を揃えて言える" inBuild="1"/>
+        <p text="始めて聞いてもわかる" inBuild="2"/>
+        <p text="記憶に残るような" inBuild="3"/>
+        <p text="自分がやっていることが正しいかの指標" inBuild="4"/>
+      </div>
+    </div>
+  </div>
+</scene-slide>
+
+  <!--Slide 20-->
+  <scene-slide>
+  <camera>
+  </camera>
+  <mesh material="new(heart-shader)"/>
+    <div class="vertical-center">
+    <p text="https://grimoire.gl" class="center-text medium" outBuild="1"/>
   </div>
 </scene-slide>
 

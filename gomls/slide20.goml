@@ -1,0 +1,8 @@
+<scene-slide>
+  <camera>
+  </camera>
+  <mesh material="new(heart-shader)"/>
+    <div class="vertical-center">
+    <p text="https://grimoire.gl" class="center-text medium" outBuild="1"/>
+  </div>
+</scene-slide>

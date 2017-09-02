@@ -22,6 +22,12 @@ uniform vec2 _viewportSize;
 
 uniform float shift;
 
+@{default:1}
+uniform float saturation;
+
+@{default:1}
+uniform float brightness;
+
 vec3 rgb2hsv(vec3 c)
 {
     vec4 K = vec4(0.0, -1.0 / 3.0, 2.0 / 3.0, -1.0);
@@ -233,7 +239,8 @@ void main(  ) {
 		sparks = sparkLife*sparksGray*vec3(0.3,1.0,0.7);
 	}
 	vec3 fireHSV = rgb2hsv(fire.rgb);
-  fireHSV.x += shift;
+  	fireHSV.x += shift;
+  	fireHSV.yz *= vec2(saturation,brightness);
 	gl_FragColor = vec4(max(hsv2rgb(fireHSV),sparks)+smoke,1.0);
 }
 #endif

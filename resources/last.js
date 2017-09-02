@@ -10,4 +10,12 @@ gr(()=>{
       gr("*")(".last-shader").setAttribute("shift",0.3);
     }
   });
+  gr("*")(".heart-slide").on("build-start",(args)=>{
+    if(args === 0){
+      gr("*")(".heart-shader").setAttribute("speed",0.001);      
+    }
+    if(args === 1){
+      gr("*")(".heart-shader").setAttribute("speed",0.05);    
+    }
+  })
 });

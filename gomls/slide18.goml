@@ -1,0 +1,11 @@
+<scene-slide build="2" class="heart-slide">
+  <camera>
+  </camera>
+  <mesh material="new(heart-shader)" class="heart-shader"/>
+<div class="vertical-center">
+    <p text="プロダクト愛" class="center-text medium" outBuild="1"/>
+  </div>
+  <div class="vertical-center">
+    <p text="世界観への狂信" class="center-text medium" inBuild="1"/>
+  </div>
+</scene-slide>

@@ -1,5 +1,3 @@
-import __MAIN__ from "./main";
-import gr from "grimoirejs";
 import ComponentsContainerComponent from "./Components/ContainerComponent";
 import ComponentsEditorComponent from "./Components/EditorComponent";
 import ComponentsImageComponent from "./Components/ImageComponent";
@@ -11,6 +9,8 @@ import ComponentsVideoComponent from "./Components/VideoComponent";
 let __VERSION__ = "1.0.0";
 let __NAME__ = "grimoirejs-sc-slide";
 
+import __MAIN__ from "./main";
+//"cauldron generate-exposure --src ./src --dest ./src/index.ts --ts --main ./src/main.ts --dts ./ref",
 let __EXPOSE__ = {
   "Components": {
     "ContainerComponent": ComponentsContainerComponent,
@@ -23,6 +23,7 @@ let __EXPOSE__ = {
   }
 };
 
+import gr from "grimoirejs";
 gr.notifyRegisteringPlugin(__NAME__);
 let __BASE__ = __MAIN__();
 

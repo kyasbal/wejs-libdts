@@ -1,19 +1,19 @@
 <scene-slide build="3" class="last-slide">
   <camera/>
-  <mesh material="new(intro-shader)" shift="0" class="last-shader">
+  <mesh material="new(intro-shader)" shift="0" class="last-shader" saturation="0.2" brightness="2.0">
   </mesh>
   <div id="intro-container">
     <div id="intro-container-left">
       <div class="intro-inner">
-        <p text="この後の進行"></p>
+        <p text="リーダーシップ"></p>
       </div>
     </div>
     <div id="intro-container-right">
       <div class="intro-inner">
-        <p text="基礎編: @case2912" inBuild="1"/>
-        <p text="基本的なタグやコンポーネントの紹介" inBuild="1"/>
-        <p text="応用編: @moajo" inBuild="2"/>
-        <p text="タグやコンポーネントを作ってみる" inBuild="2"/>
+        <p text="邪悪にならない" inBuild="1"/>
+        <p text="気がついたら同じ苦労をしろと思ってないか?" inBuild="1"/>
+        <p text="文句言うより全部実装" inBuild="2"/>
+        <p text="だめだったら全部作り直す" inBuild="2"/>
       </div>
     </div>
   </div>

@@ -231,3 +231,6 @@ div#paragraph-root {
 .fusion-root .fusion-root-child img {
   width: 350px;
 }
+.medium {
+  font-size: 5em;
+}

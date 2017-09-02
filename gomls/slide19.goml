@@ -1,0 +1,19 @@
+<scene-slide build="5">
+  <camera/>
+  <mesh material="new(intro-shader)" shift="0" brightness="4"/>
+  <div id="intro-container">
+    <div id="intro-container-left">
+      <div class="intro-inner">
+        <p text="一言でわかるコンセプト"></p>
+      </div>
+    </div>
+    <div id="intro-container-right">
+      <div class="intro-inner">
+        <p text="全員が口を揃えて言える" inBuild="1"/>
+        <p text="始めて聞いてもわかる" inBuild="2"/>
+        <p text="記憶に残るような" inBuild="3"/>
+        <p text="自分がやっていることが正しいかの指標" inBuild="4"/>
+      </div>
+    </div>
+  </div>
+</scene-slide>

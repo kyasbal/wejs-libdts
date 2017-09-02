@@ -1,7 +1,5 @@
-import "grimoirejs/register";
-import "grimoirejs-math/register";
-import "grimoirejs-fundamental/register";
 import "grimoirejs-forward-shading/register";
+import "grimoirejs-animation/register";
 import "grimoirejs-gltf/register";
 import "grimoirejs-slide-system/register";
 import gr from "grimoirejs";
