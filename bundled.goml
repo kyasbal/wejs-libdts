@@ -29,6 +29,7 @@
         <p text="TypescriptとGLSLばっか書いてる人"/>
         <p text="🎉最近院試受かった🎉" inBuild="1"/>
         <p text="HTML5カンファレンスでWebGLの未来をドヤ顔で語るよ" inBuild="2"/>
+        <markdown src="/md/index.md"/>
       </div>
     </div>
   </div>

@@ -24,7 +24,7 @@ class CauldronPlugin {
   apply(compiler) {
     compiler.plugin("compile", () => {
       try {
-        console.log(require('child_process').execSync('npm run generate-expose').toString());
+        console.log(require('child_process').execSync('npm run bundle-goml').toString());
       } catch (e) {
         console.log(e);
       }

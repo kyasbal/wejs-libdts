@@ -2,6 +2,7 @@ import "grimoirejs-forward-shading/register";
 import "grimoirejs-animation/register";
 import "grimoirejs-gltf/register";
 import "grimoirejs-slide-system/register";
+import "style-loader!css-loader!stylus-loader!../resources/index.styl";
 import gr from "grimoirejs";
 
 import ParagraphComponent from "./Components/ParagraphComponent";
@@ -10,6 +11,7 @@ import ImageComponent from "./Components/ImageComponent";
 import ProgressSeeker from "./Components/ProgressSeeker";
 import VideoComponent from "./Components/VideoComponent";
 import EditorComponent from "./Components/EditorComponent";
+import MarkdownComponent from "./Components/MarkdownComponent";
 import Rotate from "./Components/Rotate";
 
 export default ()=>{
@@ -21,11 +23,13 @@ export default ()=>{
     gr.registerComponent("Video",VideoComponent);
     gr.registerComponent("Rotate",Rotate);
     gr.registerComponent("Editor",EditorComponent);
+    gr.registerComponent("Markdown",MarkdownComponent);
     gr.registerNode("p",["Paragraph"]);
     gr.registerNode("div",["Container"]);
     gr.registerNode("img",["Image"]);
     gr.registerNode("video",["Video"]);
     gr.registerNode("editor",["Editor"]);
+    gr.registerNode("markdown",["Markdown"]);
     gr.registerNode("render-slide-hitarea",["RenderSlideHitarea"],{},"render-slide");
   });
   gr(()=>{

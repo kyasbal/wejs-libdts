@@ -27,11 +27,16 @@ export default class ContainerComponent extends Component {
     if(parentContainer){
       this._parent = parentContainer.targetElement;
     }else{
-      this._parent = document.querySelector(this.getAttribute("defaultContainer")) as HTMLElement;
+      const parentContainer = document.querySelector(this.getAttribute("defaultContainer")) as HTMLElement;
+      const parent = document.createElement("div");
+      parent.className = "slide-container";
+      parentContainer.appendChild(parent);
+      this._parent = parent;
     }
-    const className = this.node.getAttribute("class");
-    if(className){
-      this.targetElement.className = className.reduce((a,b) => a + " " + b);
+    let className = this.node.getAttribute("class");
+    className = className ? className : [];
+    if(className.length > 0||this.defaultClasses.length > 0){
+      this.targetElement.className = Array.prototype.concat([],className,this.defaultClasses).reduce((a,b) => a + " " + b);
     }
     const idName = this.node.getAttribute("id");
     if(idName){
@@ -39,6 +44,10 @@ export default class ContainerComponent extends Component {
     }
     this.targetElement.style.visibility = "collapse";
     this._parent.appendChild(this.targetElement);
+  }
+
+  public get defaultClasses():string[]{
+    return [];
   }
 
   public generateTag():HTMLElement{

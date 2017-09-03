@@ -1,3 +1,19 @@
+.slide-container {
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+}
+:color white {
+  text-shadow: 1px 1px 2px #000;
+}
+:color black {
+  text-shadow: 1px 1px 2px #fff;
+}
+.markdown-container {
+  font-size: 10vw;
+}
 html,
 body {
   margin: 0px;
