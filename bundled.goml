@@ -291,25 +291,6 @@
   </editor>
 </scene-slide>
 
-  <!--Slide 18-->
-  <scene-slide build="2" class="intro-slide">
-  <camera/>
-  <mesh material="new(future-shader)" shift="0.55" class="intro-shader" brightness="4"/>
-  <div id="intro-container">
-    <div id="intro-container-left">
-      <div class="intro-inner">
-      <img src="./resources/future1.png"/>
-      <img src="./resources/future2.png" inBuild="1"/>
-    </div>
-    </div>
-    <div id="intro-container-right">
-      <div class="intro-inner">
-        <markdown src="/gomls/grimoire/future/future.md"/>
-      </div>
-    </div>
-  </div>
-</scene-slide>
-
   <renderer>
     <render-slide-hitarea>
       <render-slide-hitarea.components>
