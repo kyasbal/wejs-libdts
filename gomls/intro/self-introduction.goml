@@ -11,7 +11,7 @@
     </div>
     <div id="intro-container-right">
       <div class="intro-inner">
-        <markdown src="/gomls/intro/self-introduction.md"/>
+        <markdown src="/gomls/intro/self-introduction.mdt"/>
       </div>
     </div>
   </div>
