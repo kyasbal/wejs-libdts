@@ -1,0 +1,18 @@
+<scene-slide build="2" class="intro-slide">
+  <camera/>
+  <mesh material="new(intro-shader)" shift="0.55" class="intro-shader" brightness="4"/>
+  <div id="intro-container">
+    <div id="intro-container-left">
+      <div class="intro-inner">
+      <img src="./resources/icon.png"/>
+      <p text="石井 翔"/>
+      <p text="@kyasbal-1994"></p>
+    </div>
+    </div>
+    <div id="intro-container-right">
+      <div class="intro-inner">
+        <markdown src="/gomls/intro/self-introduction.md"/>
+      </div>
+    </div>
+  </div>
+</scene-slide>

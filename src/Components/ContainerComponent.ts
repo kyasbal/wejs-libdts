@@ -21,8 +21,11 @@ export default class ContainerComponent extends Component {
 
   private _parent:HTMLElement;
 
+  private _defaultDisplay:string;
+
   public $mount():void{
     this.targetElement = this.generateTag();
+    this._defaultDisplay = this.targetElement.style.display;
     const parentContainer = this.node.getComponentInAncestor(ContainerComponent);
     if(parentContainer){
       this._parent = parentContainer.targetElement;
@@ -42,7 +45,7 @@ export default class ContainerComponent extends Component {
     if(idName){
       this.targetElement.id = idName;
     }
-    this.targetElement.style.visibility = "collapse";
+    this.targetElement.style.display = "none";
     this._parent.appendChild(this.targetElement);
   }
 
@@ -56,22 +59,22 @@ export default class ContainerComponent extends Component {
 
   public $buildStart(buildIndex:number):void{
     if(this.getAttribute("inBuild") === buildIndex){
-      this.targetElement.style.visibility="visible";
+      this.targetElement.style.display=this._defaultDisplay;
       this.targetElement.style.opacity = "1";
     }
     if(buildIndex === this.getAttribute("outBuild")){
-      this.targetElement.style.visibility="collapse";
+      this.targetElement.style.display="none";
     }
   }
 
   public $buildProgress(args:{buildIndex:number,progress:number}):void {
     if(this.getAttribute("inBuild") === args.buildIndex){
-      this.targetElement.style.visibility="visible";
+      this.targetElement.style.display=this._defaultDisplay;
       this.targetElement.style.opacity = args.progress+"";
     }
   }
 
   public $slideEnd():void{
-    this.targetElement.style.visibility="collapse";
+    this.targetElement.style.display="none";
   }
 }

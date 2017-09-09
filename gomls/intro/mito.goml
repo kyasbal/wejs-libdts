@@ -1,0 +1,6 @@
+<scene-slide bgColor="white">
+  <camera/>
+  <div class="vertical-center">
+    <p text="未踏" class="center-text-black"/>
+  </div>
+</scene-slide>

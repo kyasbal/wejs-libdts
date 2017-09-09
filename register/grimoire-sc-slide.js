@@ -111,6 +111,7 @@ var ContainerComponent = function (_Component) {
         key: "$mount",
         value: function $mount() {
             this.targetElement = this.generateTag();
+            this._defaultDisplay = this.targetElement.style.display;
             var parentContainer = this.node.getComponentInAncestor(ContainerComponent);
             if (parentContainer) {
                 this._parent = parentContainer.targetElement;
@@ -132,7 +133,7 @@ var ContainerComponent = function (_Component) {
             if (idName) {
                 this.targetElement.id = idName;
             }
-            this.targetElement.style.visibility = "collapse";
+            this.targetElement.style.display = "none";
             this._parent.appendChild(this.targetElement);
         }
     }, {
@@ -144,25 +145,25 @@ var ContainerComponent = function (_Component) {
         key: "$buildStart",
         value: function $buildStart(buildIndex) {
             if (this.getAttribute("inBuild") === buildIndex) {
-                this.targetElement.style.visibility = "visible";
+                this.targetElement.style.display = this._defaultDisplay;
                 this.targetElement.style.opacity = "1";
             }
             if (buildIndex === this.getAttribute("outBuild")) {
-                this.targetElement.style.visibility = "collapse";
+                this.targetElement.style.display = "none";
             }
         }
     }, {
         key: "$buildProgress",
         value: function $buildProgress(args) {
             if (this.getAttribute("inBuild") === args.buildIndex) {
-                this.targetElement.style.visibility = "visible";
+                this.targetElement.style.display = this._defaultDisplay;
                 this.targetElement.style.opacity = args.progress + "";
             }
         }
     }, {
         key: "$slideEnd",
         value: function $slideEnd() {
-            this.targetElement.style.visibility = "collapse";
+            this.targetElement.style.display = "none";
         }
     }, {
         key: "defaultClasses",
@@ -7519,7 +7520,7 @@ exports = module.exports = __webpack_require__(19)(undefined);
 
 
 // module
-exports.push([module.i, ".slide-container {\n  position: fixed;\n  left: 0px;\n  right: 0px;\n  top: 0px;\n  bottom: 0px;\n}\n:color white {\n  text-shadow: 1px 1px 2px #000;\n}\n:color black {\n  text-shadow: 1px 1px 2px #fff;\n}\n.markdown-container {\n  font-size: 10vw;\n}\nhtml,\nbody {\n  margin: 0px;\n  padding: 0px;\n  height: 100%;\n  background-color: #000;\n}\n#canvas-container {\n  position: absolute;\n  left: 0px;\n  right: 0px;\n  top: 0px;\n  bottom: 0px;\n}\n#model-source {\n  display: flex;\n  justify-content: space-around;\n  flex-direction: column;\n  height: 100%;\n}\n#editor-root {\n  z-index: 10;\n  position: absolute;\n  left: 0px;\n  right: 0px;\n  top: 0px;\n  bottom: 0px;\n  pointer-events: none;\n}\n#editor-root .single-editor-container-outer {\n  position: absolute;\n  top: 5%;\n  bottom: 5%;\n  left: 10%;\n  right: 10%;\n  pointer-events: all;\n}\n#editor-root .single-editor-container {\n  height: 100%;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  opacity: 0.3;\n}\n#editor-root .single-editor-container:hover {\n  opacity: 0.9;\n}\n#editor-root .actual-editor-container {\n  flex: 1;\n}\n#editor-root .button-container {\n  display: flex;\n  justify-content: flex-end;\n}\n#editor-root .button-container .button-inner-container {\n  width: 120px;\n  text-align: center;\n  border: 4px #f00 solid;\n}\n#editor-root .button-container .button-inner-container:hover {\n  background-color: rgba(255,255,255,0.8);\n  cursor: pointer;\n}\n#editor-root .button-container .button-inner-container p {\n  color: #f00;\n  font-weight: 600;\n}\ndiv#paragraph-root {\n  pointer-events: none;\n  position: absolute;\n  z-index: 10;\n  left: 0px;\n  right: 0px;\n  top: 0px;\n  bottom: 0px;\n}\n#intro-container {\n  position: absolute;\n  left: 0px;\n  right: 0px;\n  top: 0px;\n  bottom: 0px;\n  display: flex;\n}\n#intro-container>div {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n#intro-container .intro-inner {\n  background-color: rgba(255,255,255,0.08);\n  margin: 0 auto;\n  padding: 30px 100px;\n}\n#intro-container .intro-inner>img {\n  width: 30%;\n  margin: 30px auto;\n  display: block;\n}\n#intro-container .intro-inner>p {\n  text-align: center;\n  font-size: 2em;\n  color: #fff;\n  text-shadow: 1px 1px 2px #000;\n}\n.title-text {\n  color: #9c8c69;\n  font-size: 36px;\n  text-align: center;\n  bottom: 120px;\n  position: absolute;\n  left: 0px;\n  right: 0px;\n}\n.align-right {\n  text-align: right;\n}\n.vertical-center {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-around;\n  position: absolute;\n  left: 0px;\n  right: 0px;\n  top: 0px;\n  bottom: 0px;\n  text-align: center;\n}\n.center-text {\n  font-size: 7em;\n  color: #fff;\n  text-shadow: 1px 1px 2px #000;\n  opacity: 0.7;\n}\n.center-text-black {\n  font-size: 7em;\n  color: #000;\n  text-shadow: 1px 1px 2px #000;\n  opacity: 0.7;\n}\n.fullscreen-video {\n  width: 100%;\n  height: 100%;\n}\n.fullscreen-container {\n  position: absolute;\n  left: 0px;\n  right: 0px;\n  top: 0px;\n  bottom: 0px;\n}\n.describe-logo {\n  width: 512px;\n  margin: 0 auto;\n}\n.describe-container {\n  display: flex;\n  position: absolute;\n  left: 0px;\n  right: 0px;\n  top: 0px;\n  bottom: 0px;\n  justify-content: space-between;\n}\n.describe-container .describe-inner-container {\n  display: flex;\n  flex-direction: column;\n  width: 33%;\n  text-align: center;\n  padding: 50px 0px 0px 0px;\n}\n.describe-container .describe-inner-container.bottom-align {\n  flex-direction: column-reverse;\n  padding: 0px 0px 50px 0px;\n}\n.describe-container .describe-inner-container img {\n  width: 40%;\n}\n.future-container>div {\n  margin: 0 auto;\n}\n.future-container img {\n  position: absolute;\n  width: 512px;\n  margin: 0 auto;\n  display: block;\n  transform: translate(-50%, -50%);\n}\n.future-container img.bigger {\n  width: 60%;\n}\n.fusion-root {\n  display: flex;\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  left: 0px;\n  right: 0px;\n  top: 0px;\n  bottom: 0px;\n}\n.fusion-root .logo-root {\n  position: absolute;\n  right: 0px;\n  left: 0px;\n  top: 0px;\n  bottom: 0px;\n}\n.fusion-root .logo-root .logo-inner {\n  display: flex;\n  width: 100%;\n  height: 100%;\n  justify-content: center;\n  align-items: center;\n}\n.fusion-root .fusion-logo {\n  width: 350px;\n  height: 350px;\n}\n.fusion-root .fusion-subtitle {\n  color: #000;\n  text-shadow: 0 1px 3px #fff;\n  font-size: 45px;\n}\n.fusion-root .fusion-root-child {\n  width: 50%;\n  height: 100%;\n  padding: 20px;\n}\n.fusion-root .fusion-root-child img {\n  width: 350px;\n}\n.medium {\n  font-size: 5em;\n}\n", ""]);
+exports.push([module.i, ".slide-container {\n  position: fixed;\n  left: 0px;\n  right: 0px;\n  top: 0px;\n  bottom: 0px;\n  overflow: scroll;\n}\n.markdown-container {\n  color: #fff;\n  text-shadow: 1px 1px 2px #000;\n}\n.markdown-container h1 {\n  font-size: 5vw;\n}\n.markdown-container li {\n  font-size: 2vw;\n  margin: 10px 0px;\n}\n.markdown-container strong {\n  color: #ff0;\n  text-shadow: 1px 1px 2px #000;\n}\nhtml,\nbody {\n  margin: 0px;\n  padding: 0px;\n  height: 100%;\n  background-color: #000;\n}\n#canvas-container {\n  position: absolute;\n  left: 0px;\n  right: 0px;\n  top: 0px;\n  bottom: 0px;\n}\n#model-source {\n  display: flex;\n  justify-content: space-around;\n  flex-direction: column;\n  height: 100%;\n}\n#editor-root {\n  z-index: 10;\n  position: absolute;\n  left: 0px;\n  right: 0px;\n  top: 0px;\n  bottom: 0px;\n  pointer-events: none;\n}\n#editor-root .single-editor-container-outer {\n  position: absolute;\n  top: 5%;\n  bottom: 5%;\n  left: 10%;\n  right: 10%;\n  pointer-events: all;\n}\n#editor-root .single-editor-container {\n  height: 100%;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  opacity: 0.3;\n}\n#editor-root .single-editor-container:hover {\n  opacity: 0.9;\n}\n#editor-root .actual-editor-container {\n  flex: 1;\n}\n#editor-root .button-container {\n  display: flex;\n  justify-content: flex-end;\n}\n#editor-root .button-container .button-inner-container {\n  width: 120px;\n  text-align: center;\n  border: 4px #f00 solid;\n}\n#editor-root .button-container .button-inner-container:hover {\n  background-color: rgba(255,255,255,0.8);\n  cursor: pointer;\n}\n#editor-root .button-container .button-inner-container p {\n  color: #f00;\n  font-weight: 600;\n}\ndiv#paragraph-root {\n  pointer-events: none;\n  position: absolute;\n  z-index: 10;\n  left: 0px;\n  right: 0px;\n  top: 0px;\n  bottom: 0px;\n}\n#intro-container {\n  position: absolute;\n  left: 0px;\n  right: 0px;\n  top: 0px;\n  bottom: 0px;\n  display: flex;\n}\n#intro-container>div {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n#intro-container .intro-inner {\n  background-color: rgba(255,255,255,0.08);\n  margin: 0 auto;\n  padding: 30px 100px;\n}\n#intro-container .intro-inner>img {\n  width: 30%;\n  margin: 30px auto;\n  display: block;\n}\n#intro-container .intro-inner>p {\n  text-align: center;\n  font-size: 2em;\n  color: #fff;\n  text-shadow: 1px 1px 2px #000;\n}\n.title-text {\n  color: #9c8c69;\n  font-size: 36px;\n  text-align: center;\n  bottom: 120px;\n  position: absolute;\n  left: 0px;\n  right: 0px;\n}\n.align-right {\n  text-align: right;\n}\n.vertical-center {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-around;\n  position: absolute;\n  left: 0px;\n  right: 0px;\n  top: 0px;\n  bottom: 0px;\n  text-align: center;\n}\n.center-text {\n  font-size: 7em;\n  color: #fff;\n  text-shadow: 1px 1px 2px #000;\n  opacity: 0.7;\n}\n.center-text-black {\n  font-size: 7em;\n  color: #000;\n  text-shadow: 1px 1px 2px #000;\n  opacity: 0.7;\n}\n.fullscreen-video {\n  width: 100%;\n  height: 100%;\n}\n.fullscreen-container {\n  position: absolute;\n  left: 0px;\n  right: 0px;\n  top: 0px;\n  bottom: 0px;\n}\n.describe-logo {\n  width: 512px;\n  margin: 0 auto;\n}\n.describe-container {\n  display: flex;\n  position: absolute;\n  left: 0px;\n  right: 0px;\n  top: 0px;\n  bottom: 0px;\n  justify-content: space-between;\n}\n.describe-container .describe-inner-container {\n  display: flex;\n  flex-direction: column;\n  width: 33%;\n  text-align: center;\n  padding: 50px 0px 0px 0px;\n}\n.describe-container .describe-inner-container.bottom-align {\n  flex-direction: column-reverse;\n  padding: 0px 0px 50px 0px;\n}\n.describe-container .describe-inner-container img {\n  width: 40%;\n}\n.future-container>div {\n  margin: 0 auto;\n}\n.future-container img {\n  position: absolute;\n  width: 512px;\n  margin: 0 auto;\n  display: block;\n  transform: translate(-50%, -50%);\n}\n.future-container img.bigger {\n  width: 60%;\n}\n.fusion-root {\n  display: flex;\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  left: 0px;\n  right: 0px;\n  top: 0px;\n  bottom: 0px;\n}\n.fusion-root .logo-root {\n  position: absolute;\n  right: 0px;\n  left: 0px;\n  top: 0px;\n  bottom: 0px;\n}\n.fusion-root .logo-root .logo-inner {\n  display: flex;\n  width: 100%;\n  height: 100%;\n  justify-content: center;\n  align-items: center;\n}\n.fusion-root .fusion-logo {\n  width: 350px;\n  height: 350px;\n}\n.fusion-root .fusion-subtitle {\n  color: #000;\n  text-shadow: 0 1px 3px #fff;\n  font-size: 45px;\n}\n.fusion-root .fusion-root-child {\n  width: 50%;\n  height: 100%;\n  padding: 20px;\n}\n.fusion-root .fusion-root-child img {\n  width: 350px;\n}\n.medium {\n  font-size: 5em;\n}\n", ""]);
 
 // exports
 
@@ -8081,6 +8082,10 @@ var _ContainerComponent3 = _interopRequireDefault(_ContainerComponent2);
 
 var _marked = __webpack_require__(23);
 
+var _SlideComponent = __webpack_require__(25);
+
+var _SlideComponent2 = _interopRequireDefault(_SlideComponent);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -8095,7 +8100,10 @@ var ImageComponent = function (_ContainerComponent) {
     function ImageComponent() {
         _classCallCheck(this, ImageComponent);
 
-        return _possibleConstructorReturn(this, (ImageComponent.__proto__ || Object.getPrototypeOf(ImageComponent)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (ImageComponent.__proto__ || Object.getPrototypeOf(ImageComponent)).apply(this, arguments));
+
+        _this.currentIndex = -1;
+        return _this;
     }
 
     _createClass(ImageComponent, [{
@@ -8108,15 +8116,50 @@ var ImageComponent = function (_ContainerComponent) {
             var xhr = new XMLHttpRequest();
             xhr.onload = function () {
                 var md = (0, _marked.parse)(xhr.responseText);
-                _this2.targetElement.innerHTML = md;
+                var splitted = md.split("<h1");
+                console.log(splitted);
+                splitted = splitted.filter(function (s) {
+                    return s.length > 0;
+                }).map(function (s) {
+                    return "<h1" + s;
+                });
+                console.log(splitted);
+                _this2.parsedMarkedowns = splitted;
+                if (_this2.getAttribute("reflectBuildCount")) {
+                    var slide = _this2.node.getComponentInAncestor(_SlideComponent2.default);
+                    slide.setAttribute("build", _this2.getAttribute("inBuild") + splitted.length);
+                    if (_this2.currentIndex !== -1) {
+                        _this2._updateIndex(_this2.currentIndex);
+                    }
+                }
             };
             xhr.open("GET", this.getAttribute("src"), false);
             xhr.send();
         }
     }, {
+        key: "$buildStart",
+        value: function $buildStart(buildIndex) {
+            _get(ImageComponent.prototype.__proto__ || Object.getPrototypeOf(ImageComponent.prototype), "$buildStart", this).call(this, buildIndex);
+            this._updateIndex(buildIndex);
+        }
+    }, {
         key: "generateTag",
         value: function generateTag() {
             return document.createElement("div");
+        }
+    }, {
+        key: "_updateIndex",
+        value: function _updateIndex(index) {
+            this.currentIndex = index;
+            var mdIndex = index - this.getAttribute("inBuild");
+            this.targetElement.innerHTML = this.parsedMarkedowns[mdIndex];
+            var h1s = this.targetElement.getElementsByTagName("h1");
+            for (var i = 0; i < h1s.length; i++) {
+                var h1 = h1s.item(i);
+                if (h1.innerText === "SKIP") {
+                    h1.style.display = "none";
+                }
+            }
         }
     }, {
         key: "defaultClasses",
@@ -8142,6 +8185,10 @@ ImageComponent.attributes = {
     outBuild: {
         converter: "Number",
         default: Number.MAX_SAFE_INTEGER
+    },
+    reflectBuildCount: {
+        converter: "Boolean",
+        default: true
     },
     defaultContainer: {
         converter: "String",
@@ -9467,6 +9514,14 @@ try {
 // easier to handle this case. if(!global) { ...}
 
 module.exports = g;
+
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports) {
+
+Object.defineProperty(exports,"__esModule",{value: true});
+exports.default=window.GrimoireJS&&window.GrimoireJS.lib.slide_system?window.GrimoireJS.lib.slide_system.Components.SlideComponent:undefined;
 
 
 /***/ })

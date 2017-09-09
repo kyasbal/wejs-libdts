@@ -4,19 +4,29 @@
     right 0px
     top 0px
     bottom 0px
+    overflow scroll
 
 font-size-larger = 6vw
 font-size-large = 5vw
-font-size-medium = 4vw
-font-size-small = 3vw
+font-size-medium = 3vw
+font-size-small = 2vw
 
-text-white():
+text-white()
     color white
     text-shadow 1px 1px 2px #000
-text-black():
+text-highlight()
+    color yellow
+    text-shadow 1px 1px 2px #000
+text-black()
     color black
     text-shadow 1px 1px 2px #FFF
 
 .markdown-container
     text-white()
-    font-size font-size-large
+    h1
+        font-size font-size-large
+    li
+        font-size font-size-small
+        margin 10px 0px
+    strong
+        text-highlight()

@@ -4,15 +4,22 @@
   right: 0px;
   top: 0px;
   bottom: 0px;
-}
-:color white {
-  text-shadow: 1px 1px 2px #000;
-}
-:color black {
-  text-shadow: 1px 1px 2px #fff;
+  overflow: scroll;
 }
 .markdown-container {
-  font-size: 10vw;
+  color: #fff;
+  text-shadow: 1px 1px 2px #000;
+}
+.markdown-container h1 {
+  font-size: 5vw;
+}
+.markdown-container li {
+  font-size: 2vw;
+  margin: 10px 0px;
+}
+.markdown-container strong {
+  color: #ff0;
+  text-shadow: 1px 1px 2px #000;
 }
 html,
 body {

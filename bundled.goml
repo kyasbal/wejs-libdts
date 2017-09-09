@@ -10,7 +10,7 @@
   <import-material typeName="heart-shader" src="./resources/shaders/heart.sort"/>
   <material type="transition-default" class="transition" id="default"/>
   <!--Slide 0-->
-  <scene-slide build="3" class="intro-slide">
+  <scene-slide build="2" class="intro-slide">
   <camera/>
   <mesh material="new(intro-shader)" shift="0.55" class="intro-shader" brightness="4"/>
   <div id="intro-container">
@@ -19,23 +19,25 @@
       <img src="./resources/icon.png"/>
       <p text="石井 翔"/>
       <p text="@kyasbal-1994"></p>
-      <p text="未踏2016クリエイター"/>
     </div>
     </div>
     <div id="intro-container-right">
       <div class="intro-inner">
-        <p text="グラフィックス系のエンジニア"/>
-        <p text="他にも開発環境系やCI周り、"/>
-        <p text="TypescriptとGLSLばっか書いてる人"/>
-        <p text="🎉最近院試受かった🎉" inBuild="1"/>
-        <p text="HTML5カンファレンスでWebGLの未来をドヤ顔で語るよ" inBuild="2"/>
-        <markdown src="/md/index.md"/>
+        <markdown src="/gomls/intro/self-introduction.md"/>
       </div>
     </div>
   </div>
 </scene-slide>
 
   <!--Slide 1-->
+  <scene-slide bgColor="white">
+  <camera/>
+  <div class="vertical-center">
+    <p text="未踏" class="center-text-black"/>
+  </div>
+</scene-slide>
+
+  <!--Slide 2-->
   <scene-slide>
   <camera/>
   <mesh material="new(unlit)" texture="./resources/logo.png" scale="3"/>
@@ -43,7 +45,7 @@
   <p class="title-text" text="Web開発のためのWebGLフレームワーク"/>
 </scene-slide>
 
-  <!--Slide 2-->
+  <!--Slide 3-->
   <scene-slide bgColor="black">
   <camera/>
   <div class="fullscreen-container">
@@ -54,7 +56,7 @@
   </div>
 </scene-slide>
 
-  <!--Slide 3-->
+  <!--Slide 4-->
   <scene-slide bgColor="black">
   <camera/>
   <div class="fullscreen-container">
@@ -65,14 +67,14 @@
   </div>
 </scene-slide>
 
-  <!--Slide 4-->
+  <!--Slide 5-->
   <scene-slide>
   <camera>
   </camera>
   <mesh material="new(webglis-shader)"/>
 </scene-slide>
 
-  <!--Slide 5-->
+  <!--Slide 6-->
   <scene-slide bgColor="black">
   <camera>
     <camera.components>
@@ -96,7 +98,7 @@
   <mesh rotation="x(-90)" position="0,-2.5,0" scale="20"/>
 </scene-slide>
 
-  <!--Slide 6-->
+  <!--Slide 7-->
   <scene-slide build="2">
   <camera/>
   <mesh material="new(space-shader)">
@@ -106,7 +108,7 @@
   </mesh>
 </scene-slide>
 
-  <!--Slide 7-->
+  <!--Slide 8-->
   <scene-slide>
   <camera>
     <camera.components>
@@ -120,7 +122,7 @@
   </mesh>
 </scene-slide>
 
-  <!--Slide 8-->
+  <!--Slide 9-->
   <scene-slide bgColor="black">
   <camera/>
   <div class="fullscreen-container">
@@ -131,7 +133,7 @@
   </div>
 </scene-slide>
 
-  <!--Slide 9-->
+  <!--Slide 10-->
   <scene-slide bgColor="black">
   <camera/>
   <div class="fullscreen-container">
@@ -142,7 +144,7 @@
   </div>
 </scene-slide>
 
-  <!--Slide 10-->
+  <!--Slide 11-->
   <scene-slide build="3">
   <camera/>
   <mesh material="new(fusion-shader)" progress="0.5">
@@ -181,7 +183,7 @@
   </div>
 </scene-slide>
 
-  <!--Slide 11-->
+  <!--Slide 12-->
   <scene-slide build="4">
   <camera/>
   <mesh material="new(triangle-shader)" bc="black" progress="1">
@@ -208,7 +210,7 @@
   </div>
 </scene-slide>
 
-  <!--Slide 12-->
+  <!--Slide 13-->
   <scene-slide build="5" bgColor="black">
   <object class="editor-content-container">
     <camera/>
@@ -220,7 +222,7 @@
   <editor src="./resources/empty.js" inBuild="3" outBuild="4" runButton="true"/>
 </scene-slide>
 
-  <!--Slide 13-->
+  <!--Slide 14-->
   <scene-slide build="2" bgColor="black">
   <object class="editor-content-container">
     <camera>
@@ -233,7 +235,7 @@
   <editor src="./resources/mouse.goml" inBuild="0" outBuild="1" runButton="true" language="xml"/>
 </scene-slide>
 
-  <!--Slide 14-->
+  <!--Slide 15-->
   <scene-slide build="3" bgColor="black">
   <camera>
     <camera.components>
@@ -246,7 +248,7 @@
   <editor src="./resources/rotate2.goml" inBuild="2" outBuild="3" runButton="false" language="xml"/>
 </scene-slide>
 
-  <!--Slide 15-->
+  <!--Slide 16-->
   <scene-slide build="2" bgColor="black">
   <camera>
     <camera.components>
@@ -262,7 +264,7 @@
   <editor id="source-container" src="./resources/rotate.ts" inBuild="1" outBuild="2" language="typescript" runButton="false"/>
 </scene-slide>
 
-  <!--Slide 16-->
+  <!--Slide 17-->
   <scene-slide bgColor="black" build="3" buildTransitionTime="0.2">
   <camera>
     <camera.components>
@@ -289,69 +291,22 @@
   </editor>
 </scene-slide>
 
-  <!--Slide 17-->
-  <scene-slide build="3" class="last-slide">
-  <camera/>
-  <mesh material="new(intro-shader)" shift="0" class="last-shader" saturation="0.2" brightness="2.0">
-  </mesh>
-  <div id="intro-container">
-    <div id="intro-container-left">
-      <div class="intro-inner">
-        <p text="リーダーシップ"></p>
-      </div>
-    </div>
-    <div id="intro-container-right">
-      <div class="intro-inner">
-        <p text="邪悪にならない" inBuild="1"/>
-        <p text="気がついたら同じ苦労をしろと思ってないか?" inBuild="1"/>
-        <p text="文句言うより全部実装" inBuild="2"/>
-        <p text="だめだったら全部作り直す" inBuild="2"/>
-      </div>
-    </div>
-  </div>
-</scene-slide>
-
   <!--Slide 18-->
-  <scene-slide build="2" class="heart-slide">
-  <camera>
-  </camera>
-  <mesh material="new(heart-shader)" class="heart-shader"/>
-<div class="vertical-center">
-    <p text="プロダクト愛" class="center-text medium" outBuild="1"/>
-  </div>
-  <div class="vertical-center">
-    <p text="世界観への狂信" class="center-text medium" inBuild="1"/>
-  </div>
-</scene-slide>
-
-  <!--Slide 19-->
-  <scene-slide build="5">
+  <scene-slide build="2" class="intro-slide">
   <camera/>
-  <mesh material="new(intro-shader)" shift="0" brightness="4"/>
+  <mesh material="new(future-shader)" shift="0.55" class="intro-shader" brightness="4"/>
   <div id="intro-container">
     <div id="intro-container-left">
       <div class="intro-inner">
-        <p text="一言でわかるコンセプト"></p>
-      </div>
+      <img src="./resources/future1.png"/>
+      <img src="./resources/future2.png" inBuild="1"/>
+    </div>
     </div>
     <div id="intro-container-right">
       <div class="intro-inner">
-        <p text="全員が口を揃えて言える" inBuild="1"/>
-        <p text="始めて聞いてもわかる" inBuild="2"/>
-        <p text="記憶に残るような" inBuild="3"/>
-        <p text="自分がやっていることが正しいかの指標" inBuild="4"/>
+        <markdown src="/gomls/grimoire/future/future.md"/>
       </div>
     </div>
-  </div>
-</scene-slide>
-
-  <!--Slide 20-->
-  <scene-slide>
-  <camera>
-  </camera>
-  <mesh material="new(heart-shader)"/>
-    <div class="vertical-center">
-    <p text="https://grimoire.gl" class="center-text medium" outBuild="1"/>
   </div>
 </scene-slide>
 
