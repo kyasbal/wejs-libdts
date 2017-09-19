@@ -1,0 +1,25 @@
+<scene-slide build="5" class="intro-slide" buildTransitionTime="0">
+  <camera/>
+  <mesh material="new(bg-shader)" shift="0.55" class="intro-shader" brightness="4"/>
+  <div id="intro-container">
+    <div id="intro-container-left">
+      <div class="intro-inner">
+      <img src="https://i.gyazo.com/ca3a1f6748735db280fa39665cc828eb.png" class="stat-image" outBuild="2"/>
+      <img src="https://i.gyazo.com/c85e923c2e0fe158ed4773b63d2c8b10.png" class="stat-image" inBuild="2" outBuild="3"/>
+      <img src="https://i.gyazo.com/1f85ac46c060543a3c3c1e2431818725.png" class="stat-image" inBuild="3" outBuild="4"/>
+      <img src="https://i.gyazo.com/ac057f5a9d425dca9c1f49a9022f6994.png" class="stat-image" inBuild="4"/>
+      <p text="WebGL 1.0サポート率" outBuild="3"/>
+      <p text="WebGL 2.0サポート率" inBuild="3"/>
+      <p text="引用:webglstat.com" outBuild="2"></p>
+      <p text="引用:webglstat.com" inBuild="3" outBuild="4"></p>
+      <p text="引用:caniuse.com" inBuild="2" outBuild="3"></p>
+      <p text="引用:caniuse.com" inBuild="4" outBuild="6"></p>
+    </div>
+    </div>
+    <div id="intro-container-right">
+      <div class="intro-inner">
+        <markdown src="./gomls/html5/stat/stat.md" inBuild="1"/>
+      </div>
+    </div>
+  </div>
+</scene-slide>

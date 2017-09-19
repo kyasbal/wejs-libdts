@@ -21,6 +21,27 @@
   color: #ff0;
   text-shadow: 1px 1px 2px #000;
 }
+.slide-md-container {
+  margin: 3vw;
+}
+.slide-md-container h1 {
+  margin: 0px;
+  font-size: 6vw;
+}
+.slide-md-container li {
+  margin-left: 3vw;
+  margin-bottom: 2vh;
+  font-size: 3vw;
+}
+.title-markdown p {
+  font-size: 3vw;
+}
+.stat-image {
+  width: 40vw !important;
+}
+img[alt="big-image"] {
+  height: 50vh;
+}
 html,
 body {
   margin: 0px;
@@ -114,7 +135,7 @@ div#paragraph-root {
 #intro-container .intro-inner {
   background-color: rgba(255,255,255,0.08);
   margin: 0 auto;
-  padding: 30px 100px;
+  padding: 3vh 5vw;
 }
 #intro-container .intro-inner>img {
   width: 30%;

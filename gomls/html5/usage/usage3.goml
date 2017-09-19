@@ -1,0 +1,9 @@
+<scene-slide bgColor="black">
+  <camera/>
+  <div class="fullscreen-container">
+    <video src="./resources/cad.mp4" class="fullscreen-video"/>
+  </div>
+  <div class="vertical-center">
+    <p text="CAD" class="center-text"/>
+  </div>
+</scene-slide>

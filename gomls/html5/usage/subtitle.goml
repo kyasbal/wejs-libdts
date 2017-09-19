@@ -1,0 +1,7 @@
+<scene-slide build="1" bgColor="white">
+  <camera/>
+  <mesh geometry="quad" material="new(bg-shader)"/>
+  <div class="vertical-center">
+    <markdown src="./gomls/html5/usage/subtitle.md" class="title-markdown"/>
+  </div>
+</scene-slide>

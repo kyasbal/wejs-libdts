@@ -2,6 +2,7 @@ const handlebars = require("handlebars");
 const fs = require("fs");
 const glob = require("glob");
 const yaml = require("js-yaml");
+const argv = require("yargs").argv;
 function globAsync(globStr){
   return new Promise((resolve,reject)=>{
     glob.Glob(globStr,{},(err,matches)=>{
@@ -29,7 +30,8 @@ function readAsync(fileName){
 async function bundle(){
   const header = await readAsync("./gomls/header.goml");
   const directory = "./gomls/";
-  const slideMeta = yaml.load(await readAsync("./gomls/slide.yml"));
+  const pkgJson = JSON.parse(fs.readFileSync("./package.json","utf-8"));  
+  const slideMeta = yaml.load(await readAsync(pkgJson.slide));
   const slidesInArray = [];
   for(let i = 0; i < slideMeta.length; i++){
     const slide = slideMeta[i];

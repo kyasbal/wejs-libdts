@@ -1,4 +1,4 @@
-<scene-slide build="2" class="intro-slide">
+<scene-slide build="1" class="intro-slide">
   <camera/>
   <mesh material="new(intro-shader)" shift="0.55" class="intro-shader" brightness="4"/>
   <div id="intro-container">

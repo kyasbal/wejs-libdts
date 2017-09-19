@@ -71,7 +71,7 @@ export default class ImageComponent extends ContainerComponent {
   private _updateIndex(index:number):void{
     this.currentIndex = index;
     const mdIndex = index - this.getAttribute("inBuild");
-    this.targetElement.innerHTML = this.parsedMarkedowns[mdIndex];
+    this.targetElement.innerHTML = this.parsedMarkedowns[mdIndex] || "";
     const h1s = this.targetElement.getElementsByTagName("h1");
     for(let i = 0; i < h1s.length; i++){
       const h1 = h1s.item(i);

@@ -3,13 +3,14 @@
     "version": "1.0.0",
     "description": "The boilerplate project for making plugin of grimoire.js.",
     "main": "index.js",
+    "slide":"./infoproc.yml",
     "files": [
         "register",
         "ref",
         "src"
     ],
     "scripts": {
-        "start": "webpack-dev-server --open --hot --progress",
+        "start": "webpack-dev-server --open --hot --progress --colors & watch 'npm run bundle-goml' ./gomls",
         "watch": "watch 'npm run build' ./gomls ./resources ./src",
         "stylus": "stylus ./resources/index.styl",
         "bundle": "webpack --progress --watch",

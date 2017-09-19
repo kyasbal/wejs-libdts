@@ -1,0 +1,7 @@
+<scene-slide build="1" bgColor="white">
+  <camera/>
+  <mesh geometry="quad" material="new(bg-shader)" colorBase="#BE6565"/>
+  <div class="vertical-center">
+    <markdown src="./gomls/html5/tools/tool1.md" class="title-markdown"/>
+  </div>
+</scene-slide>

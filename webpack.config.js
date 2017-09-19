@@ -1,6 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const fs = require("fs");
+const argv = require("yargs").argv;
 
 // Shot package name will be used for prefix of filename
 const fnPrefix = JSON.parse(fs.readFileSync(path.resolve(__dirname, "package.json"), "utf-8")).name.replace("grimoirejs", "grimoire");
@@ -24,7 +25,7 @@ class CauldronPlugin {
   apply(compiler) {
     compiler.plugin("compile", () => {
       try {
-        console.log(require('child_process').execSync('npm run bundle-goml').toString());
+        console.log(require('child_process').execSync(`node bundle.js > bundled.goml`).toString());
       } catch (e) {
         console.log(e);
       }

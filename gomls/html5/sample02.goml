@@ -1,0 +1,8 @@
+<scene-slide build="2">
+  <camera/>
+  <mesh material="new(space-shader)">
+    <mesh.components>
+      <ProgressSeeker/>
+    </mesh.components>
+  </mesh>
+</scene-slide>

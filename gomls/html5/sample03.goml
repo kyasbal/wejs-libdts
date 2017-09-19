@@ -1,0 +1,12 @@
+<scene-slide>
+  <camera>
+    <camera.components>
+      <MouseCameraControl/>
+    </camera.components>
+  </camera>
+  <mesh material="new(unlit)" geometry="sphere" scale="10,10,-10" texture="./resources/360.jpg">
+    <mesh.components>
+      <Rotate speed="0.005"/>
+    </mesh.components>
+  </mesh>
+</scene-slide>

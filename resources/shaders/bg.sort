@@ -1,0 +1,52 @@
+@Pass{
+// http://glslsandbox.com/e#41514.6
+// Forked from http://glslsandbox.com/e#41469.1
+FS_PREC(highp,float)
+@import "screen-vert"
+
+#ifdef FS
+
+uniform float _time;
+#define time _time/1000.
+uniform vec2 _viewportSize;
+
+@{default:5.0}
+uniform float speedDividor;
+
+@{type:"color",default:"#504677"}
+uniform vec3 colorBase;
+
+@{type:"color",default:"#111"}
+uniform vec3 ambient;
+
+@{default:0.6}
+uniform float power;
+@{default:"3,0.6,5,0.1"}
+uniform vec4 triangleConfigs;
+
+float random(vec2 st) {
+	return fract(sin(dot(st, vec2(12.9898, 78.233))) * 43758.5453);
+}
+
+vec2 st2Triangle(vec2 st) {
+	float sx1 = st.x - st.y / 2.0; // skewed x
+	float sx2 = st.x + st.y / 2.0; // skewed x
+	return vec2(sx1, sx2 + floor(st.y));  // vec2(sx1, sx2) will be rhombus.
+}
+
+float triangle(vec2 st) {
+	float sp = random(floor(st2Triangle(st)));
+	return max(0.0, (sin(sp * time/triangleConfigs.x) -triangleConfigs.y)/triangleConfigs.z);
+}
+
+void main() {
+	vec2 st = (gl_FragCoord.xy * 2.0 - _viewportSize) / min(_viewportSize.x, _viewportSize.y);;
+	st *= 2.5;  // Make pattern.
+	st.y -= time/speedDividor;  // Move
+
+	float triangles = triangle(st);  // Make triangles.
+	vec3 color = vec3(pow(triangles,power)) * colorBase;
+	gl_FragColor = vec4(color + ambient, 1.0);
+}
+#endif
+}

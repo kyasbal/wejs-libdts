@@ -1,0 +1,7 @@
+<scene-slide build="4" bgColor="white">
+  <camera/>
+  <mesh geometry="quad" material="new(bg-shader)" colorBase="#00FBFF"/>
+  <div class="slide-md-container">
+    <markdown src="./gomls/infoproc/future.md" class="default-markdown"/>
+  </div>
+</scene-slide>
