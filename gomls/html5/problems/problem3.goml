@@ -1,6 +1,17 @@
-<scene-slide build="9" bgColor="white">
-  <camera/>
-  <mesh geometry="quad" material="new(bg-shader)"/>
+<scene-slide build="1" bgColor="black">
+  <camera>
+    <camera.components>
+      <MouseCameraControl/>
+    </camera.components>
+  </camera>
+  <light intensity="10"/>
+  <light intensity="3" rotation="y(180d)"/>
+  <light intensity="1" rotation="x(-30d)"/>
+  <model src="./resources/engine/engine.gltf" scale="0.1" outBuild="1">
+    <model.components>
+      <Rotate speed="0.001"/>
+    </model.components>
+  </model>
   <div class="slide-md-container">
     <markdown src="./gomls/html5/problems/problem3.md" class="default-markdown"/>
   </div>

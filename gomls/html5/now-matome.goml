@@ -1,0 +1,7 @@
+<scene-slide bgColor="white">
+  <camera/>
+  <mesh geometry="quad" material="new(bg-shader)"/>
+  <div class="slide-md-container">
+    <markdown src="./gomls/html5/now-matome.md" class="default-markdown"/>
+  </div>
+</scene-slide>

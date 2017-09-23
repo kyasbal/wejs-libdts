@@ -1,0 +1,18 @@
+<scene-slide build="1" bgColor="black">
+  <camera>
+    <camera.components>
+      <MouseCameraControl/>
+    </camera.components>
+  </camera>
+  <light intensity="10"/>
+  <light intensity="3" rotation="y(180d)"/>
+  <light intensity="1" rotation="x(-30d)"/>
+  <model src="./resources/BrainStem/BrainStem.gltf" scale="3" inBuild="1" position="0,-2,0">
+    <model.components>
+      <Rotate speed="0.001"/>
+    </model.components>
+  </model>
+  <div class="slide-md-container">
+    <markdown src="./gomls/html5/problems/problem4.md" class="default-markdown"/>
+  </div>
+</scene-slide>

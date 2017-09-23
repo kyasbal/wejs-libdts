@@ -4,9 +4,11 @@
 - html5/sample*.goml
 - html5/title.goml
 - html5/agenda.goml
+- html5/now.goml
 - html5/stat/webgl.goml
 - html5/usage/subtitle.goml
 - html5/usage/usage*.goml
+- html5/now-matome.goml
 - html5/problems/problem*.goml
 - html5/tools/tool*.goml
 - html5/future/future*.goml

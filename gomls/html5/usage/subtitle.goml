@@ -1,4 +1,4 @@
-<scene-slide build="1" bgColor="white">
+<scene-slide build="2" bgColor="white">
   <camera/>
   <mesh geometry="quad" material="new(bg-shader)"/>
   <div class="vertical-center">

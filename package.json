@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "The boilerplate project for making plugin of grimoire.js.",
     "main": "index.js",
-    "slide":"./infoproc.yml",
+    "slide":"./html5conf.yml",
     "files": [
         "register",
         "ref",
