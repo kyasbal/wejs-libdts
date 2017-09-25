@@ -1,4 +1,4 @@
-<scene-slide build="10" bgColor="white">
+<scene-slide build="7" bgColor="white">
   <camera/>
   <mesh geometry="quad" material="new(bg-shader)"/>
   <div class="slide-md-container">

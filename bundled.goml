@@ -278,7 +278,7 @@
 </scene-slide>
 
   <!--Slide 20-->
-  <scene-slide build="10" bgColor="white">
+  <scene-slide build="7" bgColor="white">
   <camera/>
   <mesh geometry="quad" material="new(bg-shader)"/>
   <div class="slide-md-container">
@@ -319,6 +319,23 @@
   <mesh geometry="quad" material="new(bg-shader)" colorBase="#00CAFF"/>
   <div class="slide-md-container">
     <markdown src="./gomls/html5/future/future2.md" class="default-markdown"/>
+  </div>
+</scene-slide>
+
+  <!--Slide 25-->
+  <scene-slide>
+  <camera/>
+  <mesh material="new(unlit)" texture="./resources/logo.png" scale="3"/>
+  <mesh position="0,1,0.1" scale="5" material="new(top-shader)"/>
+  <p class="title-text" text="Web開発のためのWebGLフレームワーク"/>
+</scene-slide>
+
+  <!--Slide 26-->
+  <scene-slide build="2" bgColor="white">
+  <camera/>
+  <mesh geometry="quad" material="new(bg-shader)"/>
+  <div class="vertical-center">
+    <markdown src="./gomls/html5/final.md" class="title-markdown"/>
   </div>
 </scene-slide>
 

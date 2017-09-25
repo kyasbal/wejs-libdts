@@ -59,15 +59,16 @@
 
 * **Khronos**が標準化しようとしているモデルフォーマット
 * **3Dフォーマットにおけるjpgを目指す**
-![](https://www.khronos.org/assets/uploads/apis/2016-gltf-jpeg-of-3d.jpg)
-# glTF
 
-* 各種エクスポーター/コンバーターもある
+![what-is-gltf](https://www.khronos.org/assets/uploads/apis/2016-gltf-jpeg-of-3d.jpg)
+
+# glTF
 * **ランタイム時のための**モデルフォーマット
     * 編集が目的ではない
     * JSでのパースが非常に容易
     * WebGLでの表示が非常に楽
     * 無駄なデータが省かれた
+* 各種エクスポーター / コンバーター
 
 # glTF
 
