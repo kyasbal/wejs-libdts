@@ -1,0 +1,7 @@
+<scene-slide build="2" bgColor="white">
+  <camera/>
+  <mesh geometry="quad" material="new(bg-shader)" colorBase="#FFF"/>
+  <div class="slide-md-container">
+    <markdown src="./gomls/mitou/mitou-kadai2.md" class="default-markdown"/>
+  </div>
+</scene-slide>

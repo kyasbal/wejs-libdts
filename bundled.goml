@@ -9,13 +9,14 @@
   <import-material typeName="triangle-shader" src="./resources/shaders/triangle.sort"/>
   <import-material typeName="heart-shader" src="./resources/shaders/heart.sort"/>
   <import-material typeName="bg-shader" src="./resources/shaders/bg.sort"/>
+  <import-material typeName="sky-shader" src="./resources/shaders/sky.sort"/>
   <material type="transition-default" class="transition" id="default"/>
   <!--Slide 0-->
   <scene-slide bgColor="white">
   <camera/>
   <mesh geometry="quad" material="new(bg-shader)" colorBase="#008FFF" power="0.2"/>
   <div class="vertical-center">
-    <markdown src="./gomls/html5/title.md" class="title-markdown"/>
+    <markdown src="./gomls/wejs/title.md" class="title-markdown"/>
   </div>
 </scene-slide>
 
@@ -40,13 +41,98 @@
 </scene-slide>
 
   <!--Slide 2-->
-  <scene-slide>
-  <camera>
-  </camera>
-  <mesh material="new(webglis-shader)"/>
+  <scene-slide bgColor="white" transitionTime="0">
+  <camera/>
+  <mesh geometry="quad" material="new(sky-shader)" colorBase="#008FFF" power="0.2"/>
+  <div class="vertical-center">
+    <markdown src="./gomls/wejs/intro.md" class="title-markdown"/>
+  </div>
 </scene-slide>
 
   <!--Slide 3-->
+  <scene-slide build="10" bgColor="white">
+  <camera/>
+  <mesh geometry="quad" material="new(bg-shader)" colorBase="#FFF"/>
+  <div class="slide-md-container">
+    <markdown src="./gomls/wejs/typescript.md" class="default-markdown"/>
+  </div>
+</scene-slide>
+
+  <!--Slide 4-->
+  <scene-slide bgColor="white" transitionTime="0">
+  <camera/>
+  <mesh geometry="quad" material="new(sky-shader)" colorBase="#008FFF" power="0.2"/>
+  <div class="vertical-center">
+    <markdown src="./gomls/wejs/turami.md" class="title-markdown"/>
+  </div>
+</scene-slide>
+
+  <!--Slide 5-->
+  <scene-slide build="2" bgColor="white">
+  <camera/>
+  <mesh geometry="quad" material="new(bg-shader)" colorBase="#FFF"/>
+  <div class="slide-md-container">
+    <markdown src="./gomls/wejs/typescript2.md" class="default-markdown"/>
+  </div>
+</scene-slide>
+
+  <!--Slide 6-->
+  <scene-slide>
+  <camera/>
+  <mesh material="new(unlit)" texture="./resources/logo.png" scale="3"/>
+  <mesh position="0,1,0.1" scale="5" material="new(top-shader)"/>
+  <p class="title-text" text="Web開発のためのWebGLフレームワーク"/>
+</scene-slide>
+
+  <!--Slide 7-->
+  <scene-slide bgColor="white" transitionTime="0">
+  <camera/>
+  <mesh geometry="quad" material="new(sky-shader)" colorBase="#008FFF" power="0.2"/>
+  <div class="vertical-center">
+    <markdown src="./gomls/mitou/motivation.md" class="title-markdown"/>
+  </div>
+</scene-slide>
+
+  <!--Slide 8-->
+  <scene-slide build="3">
+  <camera/>
+  <mesh material="new(fusion-shader)" progress="0.5">
+    <mesh.components>
+      <ProgressSeeker inBuild="2"/>
+    </mesh.components>
+  </mesh>
+  <div class="fusion-root">
+    <div class="logo-root">
+      <div class="logo-inner">
+        <img class="fusion-logo" src="./resources/logo.png" inBuild="2"/>
+      </div>
+    </div>
+    <div class="fusion-root-child">
+      <div>
+        <p text="CGの世界" class="fusion-subtitle"></p>
+      </div>
+      <div>
+        <img src="./resources/webgl.png"/>
+      </div>
+      <div>
+        <img src="./resources/loop.png" inBuild="1"/>
+      </div>
+    </div>
+    <div class="fusion-root-child align-right">
+      <div>
+        <p text="Webの世界" class="fusion-subtitle"></p>
+      </div>
+      <div>
+        <img src="./resources/webtech.png"/>
+      </div>
+      <div>
+        <img src="./resources/event.png" inBuild="1"/>
+      </div>
+    </div>
+  </div>
+</scene-slide>
+
+  <!--Slide 9-->
   <scene-slide bgColor="black">
   <camera>
     <camera.components>
@@ -70,7 +156,7 @@
   <mesh rotation="x(-90)" position="0,-2.5,0" scale="20"/>
 </scene-slide>
 
-  <!--Slide 4-->
+  <!--Slide 10-->
   <scene-slide build="2">
   <camera/>
   <mesh material="new(space-shader)">
@@ -80,7 +166,7 @@
   </mesh>
 </scene-slide>
 
-  <!--Slide 5-->
+  <!--Slide 11-->
   <scene-slide>
   <camera>
     <camera.components>
@@ -92,251 +178,6 @@
       <Rotate speed="0.005"/>
     </mesh.components>
   </mesh>
-</scene-slide>
-
-  <!--Slide 6-->
-  <scene-slide bgColor="white">
-  <camera/>
-  <mesh geometry="quad" material="new(bg-shader)" colorBase="#008FFF" power="0.2"/>
-  <div class="vertical-center">
-    <markdown src="./gomls/html5/title.md" class="title-markdown"/>
-  </div>
-</scene-slide>
-
-  <!--Slide 7-->
-  <scene-slide bgColor="white">
-  <camera/>
-  <mesh geometry="quad" material="new(bg-shader)"/>
-  <div class="slide-md-container">
-    <markdown src="./gomls/html5/agenda.md" class="default-markdown"/>
-  </div>
-</scene-slide>
-
-  <!--Slide 8-->
-  <scene-slide bgColor="white">
-  <camera/>
-  <mesh geometry="quad" material="new(bg-shader)" colorBase="#008FFF" power="0.2"/>
-  <div class="vertical-center">
-    <markdown src="./gomls/html5/now.md" class="title-markdown"/>
-  </div>
-</scene-slide>
-
-  <!--Slide 9-->
-  <scene-slide build="5" class="intro-slide" buildTransitionTime="0">
-  <camera/>
-  <mesh material="new(bg-shader)" shift="0.55" class="intro-shader" brightness="4"/>
-  <div id="intro-container">
-    <div id="intro-container-left">
-      <div class="intro-inner">
-      <img src="https://i.gyazo.com/ca3a1f6748735db280fa39665cc828eb.png" class="stat-image" outBuild="2"/>
-      <img src="https://i.gyazo.com/c85e923c2e0fe158ed4773b63d2c8b10.png" class="stat-image" inBuild="2" outBuild="3"/>
-      <img src="https://i.gyazo.com/1f85ac46c060543a3c3c1e2431818725.png" class="stat-image" inBuild="3" outBuild="4"/>
-      <img src="https://i.gyazo.com/ac057f5a9d425dca9c1f49a9022f6994.png" class="stat-image" inBuild="4"/>
-      <p text="WebGL 1.0サポート率" outBuild="3"/>
-      <p text="WebGL 2.0サポート率" inBuild="3"/>
-      <p text="引用:webglstat.com" outBuild="2"></p>
-      <p text="引用:webglstat.com" inBuild="3" outBuild="4"></p>
-      <p text="引用:caniuse.com" inBuild="2" outBuild="3"></p>
-      <p text="引用:caniuse.com" inBuild="4" outBuild="6"></p>
-    </div>
-    </div>
-    <div id="intro-container-right">
-      <div class="intro-inner">
-        <markdown src="./gomls/html5/stat/stat.md" inBuild="1"/>
-      </div>
-    </div>
-  </div>
-</scene-slide>
-
-  <!--Slide 10-->
-  <scene-slide build="2" bgColor="white">
-  <camera/>
-  <mesh geometry="quad" material="new(bg-shader)"/>
-  <div class="vertical-center">
-    <markdown src="./gomls/html5/usage/subtitle.md" class="title-markdown"/>
-  </div>
-</scene-slide>
-
-  <!--Slide 11-->
-  <scene-slide bgColor="black">
-  <camera/>
-  <div class="fullscreen-container">
-    <video src="./resources/matterport.mp4" class="fullscreen-video"/>
-  </div>
-  <div class="vertical-center">
-    <p text="不動産内覧" class="center-text"/>
-  </div>
-</scene-slide>
-
-  <!--Slide 12-->
-  <scene-slide bgColor="black">
-  <camera/>
-  <div class="fullscreen-container">
-    <video src="./resources/sketchfab.mp4" class="fullscreen-video"/>
-  </div>
-  <div class="vertical-center">
-    <p text="ソーシャルメディア" class="center-text"/>
-  </div>
-</scene-slide>
-
-  <!--Slide 13-->
-  <scene-slide bgColor="black">
-  <camera/>
-  <div class="fullscreen-container">
-    <video src="./resources/cad.mp4" class="fullscreen-video"/>
-  </div>
-  <div class="vertical-center">
-    <p text="CAD" class="center-text"/>
-  </div>
-</scene-slide>
-
-  <!--Slide 14-->
-  <scene-slide bgColor="white">
-  <camera/>
-  <mesh geometry="quad" material="new(bg-shader)"/>
-  <div class="slide-md-container">
-    <markdown src="./gomls/html5/now-matome.md" class="default-markdown"/>
-  </div>
-</scene-slide>
-
-  <!--Slide 15-->
-  <scene-slide build="2" bgColor="white">
-  <camera/>
-  <mesh geometry="quad" material="new(bg-shader)"/>
-  <div class="vertical-center">
-    <markdown src="./gomls/html5/problems/problem1.md" class="title-markdown"/>
-  </div>
-</scene-slide>
-
-  <!--Slide 16-->
-  <scene-slide build="11" bgColor="white">
-  <camera/>
-  <mesh geometry="quad" material="new(bg-shader)"/>
-  <div class="slide-md-container">
-    <markdown src="./gomls/html5/problems/problem2.md" class="default-markdown"/>
-  </div>
-</scene-slide>
-
-  <!--Slide 17-->
-  <scene-slide build="1" bgColor="black">
-  <camera>
-    <camera.components>
-      <MouseCameraControl/>
-    </camera.components>
-  </camera>
-  <light intensity="10"/>
-  <light intensity="3" rotation="y(180d)"/>
-  <light intensity="1" rotation="x(-30d)"/>
-  <model src="./resources/engine/engine.gltf" scale="0.1" outBuild="1">
-    <model.components>
-      <Rotate speed="0.001"/>
-    </model.components>
-  </model>
-  <div class="slide-md-container">
-    <markdown src="./gomls/html5/problems/problem3.md" class="default-markdown"/>
-  </div>
-</scene-slide>
-
-  <!--Slide 18-->
-  <scene-slide build="1" bgColor="black">
-  <camera>
-    <camera.components>
-      <MouseCameraControl/>
-    </camera.components>
-  </camera>
-  <light intensity="10"/>
-  <light intensity="3" rotation="y(180d)"/>
-  <light intensity="1" rotation="x(-30d)"/>
-  <model src="./resources/BrainStem/BrainStem.gltf" scale="3" inBuild="1" position="0,-2,0">
-    <model.components>
-      <Rotate speed="0.001"/>
-    </model.components>
-  </model>
-  <div class="slide-md-container">
-    <markdown src="./gomls/html5/problems/problem4.md" class="default-markdown"/>
-  </div>
-</scene-slide>
-
-  <!--Slide 19-->
-  <scene-slide build="1" bgColor="black">
-  <camera>
-    <camera.components>
-      <MouseCameraControl/>
-    </camera.components>
-  </camera>
-  <light intensity="10"/>
-  <light intensity="3" rotation="y(180d)"/>
-  <light intensity="1" rotation="x(-30d)"/>
-  <model src="./resources/Buggy/Buggy.gltf" scale="0.01" inBuild="1" position="0,-2,0">
-    <model.components>
-      <Rotate speed="0.001"/>
-    </model.components>
-  </model>
-  <div class="slide-md-container">
-    <markdown src="./gomls/html5/problems/problem5.md" class="default-markdown"/>
-  </div>
-</scene-slide>
-
-  <!--Slide 20-->
-  <scene-slide build="7" bgColor="white">
-  <camera/>
-  <mesh geometry="quad" material="new(bg-shader)"/>
-  <div class="slide-md-container">
-    <markdown src="./gomls/html5/problems/problem6.md" class="default-markdown"/>
-  </div>
-</scene-slide>
-
-  <!--Slide 21-->
-  <scene-slide build="1" bgColor="white">
-  <camera/>
-  <mesh geometry="quad" material="new(bg-shader)" colorBase="#BE6565"/>
-  <div class="vertical-center">
-    <markdown src="./gomls/html5/tools/tool1.md" class="title-markdown"/>
-  </div>
-</scene-slide>
-
-  <!--Slide 22-->
-  <scene-slide build="4" bgColor="white">
-  <camera/>
-  <mesh geometry="quad" material="new(bg-shader)" colorBase="#BE6565"/>
-  <div class="slide-md-container">
-    <markdown src="./gomls/html5/tools/tool2.md" class="default-markdown"/>
-  </div>
-</scene-slide>
-
-  <!--Slide 23-->
-  <scene-slide build="1" bgColor="white">
-  <camera/>
-  <mesh geometry="quad" material="new(bg-shader)" colorBase="#00CAFF"/>
-  <div class="vertical-center">
-    <markdown src="./gomls/html5/future/future1.md" class="title-markdown"/>
-  </div>
-</scene-slide>
-
-  <!--Slide 24-->
-  <scene-slide build="4" bgColor="white">
-  <camera/>
-  <mesh geometry="quad" material="new(bg-shader)" colorBase="#00CAFF"/>
-  <div class="slide-md-container">
-    <markdown src="./gomls/html5/future/future2.md" class="default-markdown"/>
-  </div>
-</scene-slide>
-
-  <!--Slide 25-->
-  <scene-slide>
-  <camera/>
-  <mesh material="new(unlit)" texture="./resources/logo.png" scale="3"/>
-  <mesh position="0,1,0.1" scale="5" material="new(top-shader)"/>
-  <p class="title-text" text="Web開発のためのWebGLフレームワーク"/>
-</scene-slide>
-
-  <!--Slide 26-->
-  <scene-slide build="2" bgColor="white">
-  <camera/>
-  <mesh geometry="quad" material="new(bg-shader)"/>
-  <div class="vertical-center">
-    <markdown src="./gomls/html5/final.md" class="title-markdown"/>
-  </div>
 </scene-slide>
 
   <renderer>

@@ -1,0 +1,7 @@
+<scene-slide build="10" bgColor="white">
+  <camera/>
+  <mesh geometry="quad" material="new(bg-shader)" colorBase="#FFF"/>
+  <div class="slide-md-container">
+    <markdown src="./gomls/wejs/typescript.md" class="default-markdown"/>
+  </div>
+</scene-slide>

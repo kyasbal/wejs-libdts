@@ -1,0 +1,8 @@
+<scene-slide build="1" bgColor="white">
+  <camera/>
+  <mesh geometry="quad" material="new(bg-shader)" colorBase="#FFF"/>
+  <div class="slide-md-container">
+    <markdown src="./gomls/mitou/after-mito.md" class="default-markdown"/>
+  </div>
+  
+</scene-slide>

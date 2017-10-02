@@ -26,6 +26,7 @@ export default class VideoComponent extends ContainerComponent{
       const video = this.targetElement as HTMLVideoElement;
       video.src = this.getAttribute("src");
       video.loop = true;
+      video.muted = true;
       this.video = video;
     }
 

@@ -1,0 +1,7 @@
+<scene-slide bgColor="white" transitionTime="0">
+  <camera/>
+  <mesh geometry="quad" material="new(sky-shader)" colorBase="#008FFF" power="0.2"/>
+  <div class="vertical-center">
+    <markdown src="./gomls/mitou/mirai.md" class="title-markdown"/>
+  </div>
+</scene-slide>
